@@ -2,6 +2,7 @@
 // Placeholders
 // ==========================================================================
 
+/*
 // Nav Items
 
 %nav-item-horz {
@@ -29,6 +30,8 @@
   color: palette(black);
   border-color: $color-primary;
 }
+
+*/
 
 // Headlines
 
@@ -60,26 +63,33 @@
 // Buttons
 
 %btn {
-  padding: 15px 30px;
-  border: 0;
-  border-radius : $br--default;
+  padding: 4px 13px;
+
+  border: 2px solid transparent;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  background: rgba(34, 34, 34, .9);
+
   color: $white;
-  text-transform: uppercase;
-  font-size : em(14px);
+  text-transform: $uppercase;
+  text-decoration: none;
+  letter-spacing: $letter-space;
+  font-size: 11px;
+  // font-size : em(14px);
   font-weight: $font-weight--medium;
-  transition: opacity $trns-duration;
-  display: block;
-  &:hover {
-    opacity: .75;
-  }
-  &:active {
-    opacity: initial;
-  }
-}
 
-// Icons
+  transition: all 0.2s cubic-bezier(0.000, 0.000, 0.580, 1.000);
+  -webkit-transition: all 0.2s cubic-bezier(0.000, 0.000, 0.580, 1.000);
+  -moz-transition: all 0.2s cubic-bezier(0.000, 0.000, 0.580, 1.000);
+  -o-transition: all 0.2s cubic-bezier(0.000, 0.000, 0.580, 1.000);
+  -ms-transition: all 0.2s cubic-bezier(0.000, 0.000, 0.580, 1.000);
 
-%icn--ui {
-	line-height: 0;
-	cursor: pointer;
+  box-shadow: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
 }

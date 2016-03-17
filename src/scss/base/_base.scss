@@ -102,11 +102,11 @@ a {
 	color: $white; 
 	text-decoration: none;
 	font-weight: $font-weight--medium;
-	transition: all 0.27s cubic-bezier(0, 0, 0.58, 1);
-	-webkit-transition: all 0.27s cubic-bezier(0, 0, 0.58, 1);
-	-moz-transition: all 0.27s cubic-bezier(0, 0, 0.58, 1);
-	-o-transition: all 0.27s cubic-bezier(0, 0, 0.58, 1);
-	-ms-transition: all 0.27s cubic-bezier(0, 0, 0.58, 1);
+	transition: all $trns-duration cubic-bezier(0, 0, 0.58, 1);
+	-webkit-transition: all $trns-duration cubic-bezier(0, 0, 0.58, 1);
+	-moz-transition: all $trns-duration cubic-bezier(0, 0, 0.58, 1);
+	-o-transition: all $trns-duration cubic-bezier(0, 0, 0.58, 1);
+	-ms-transition: all $trns-duration cubic-bezier(0, 0, 0.58, 1);
 	&:link,
 	&:visited {
 		text-decoration: none;
@@ -162,17 +162,15 @@ h2.heading-title{
 .hero {
 
 	@include e(content) {
+		@extend .text-center;
 		position: absolute;
 		top: 50%;
-		text-align: center;
 		width: 100%;
 		font-family: $font-family--primary;
-		text-transform: uppercase;
-		-ms-transform: translate(0, -50%);
-		/* IE 9 */
-		-webkit-transform: translate(0, -50%);
-		/* Safari */
+		text-transform: $uppercase;
 		transform: translate(0, -50%);
+		-ms-transform: translate(0, -50%);
+		-webkit-transform: translate(0, -50%);
 	}
 
 	@include e(title) {
@@ -188,7 +186,7 @@ h2.heading-title{
 			color: $white;
 			span {
 				color: $gold;
-				font-weight: 900;
+				font-weight: $font-weight--ultra-bold;
 			}
 		}
 	}
@@ -269,9 +267,9 @@ h2.heading-title{
 		@extend .text-center;
 		border: 1px solid transparent;
 		padding: 7.5px 0;
-		transition: all 0.3s ease;
-		-webkit-transition: all 0.3s ease;
-		-o-transition: all 0.3s ease;
+		transition: all $trns-duration ease;
+		-webkit-transition: all $trns-duration ease;
+		-o-transition: all $trns-duration ease;
 	}
 
 	@include e(icon) {
@@ -288,11 +286,11 @@ h2.heading-title{
 	  i {
 			font-size: 60px;
 			line-height: 140px;
-			transition: all 0.27s cubic-bezier(0, 0, 0.58, 1);
-			-webkit-transition: all 0.27s cubic-bezier(0, 0, 0.58, 1);
-			-moz-transition: all 0.27s cubic-bezier(0, 0, 0.58, 1);
-			-o-transition: all 0.27s cubic-bezier(0, 0, 0.58, 1);
-			-ms-transition: all 0.27s cubic-bezier(0, 0, 0.58, 1);
+			transition: all $trns-duration cubic-bezier(0, 0, 0.58, 1);
+			-webkit-transition: all $trns-duration cubic-bezier(0, 0, 0.58, 1);
+			-moz-transition: all $trns-duration cubic-bezier(0, 0, 0.58, 1);
+			-o-transition: all $trns-duration cubic-bezier(0, 0, 0.58, 1);
+			-ms-transition: all $trns-duration cubic-bezier(0, 0, 0.58, 1);
 			&:hover {
 				font-size: 65px;
 				line-height: 140px;
@@ -385,7 +383,7 @@ h2.heading-title{
 .btn-right:hover {
   color: $color-accent;
   background: rgba(0, 0, 0, 0.8);
-  transition: .2s;
+  transition: $trns-duration;
 }
 
 
@@ -460,7 +458,7 @@ h2.heading-title{
 
 		p {
 			margin-bottom: 15px;
-			color: #fff;
+			color: $white;
 		}
 
 		footer {
@@ -540,33 +538,37 @@ h2.heading-title{
 .footer {
   background: $color-secondary;
   padding-top: 30px;
+
 	i {
 	  color: $color-accent;
 	}
+
 	@include e(signature) {
 		@extend .center-block;
 		padding: 10px 0;
 	}
+
 	@include e(list) {
 		@extend .list-inline;
 		padding: 10px 0;
+
 		@include m(item) {
 			width: 45px;
 			height: 45px;
 			line-height: 45px !important;
 			position: relative;
 			margin: 0 15px;
+
 			a {
-			font-size: 24px;
+				font-size: 24px;
 				@include pseudo-el(before, 100%, 100%) {
 					top: 0;
 					left: 0;
-					border: 1px solid $color-accent;
-					border-radius: 1px;
+					border: 2px solid $color-accent;
 					transform: rotate(45deg);
-					transition: all 0.27s cubic-bezier(0.3, 0.1, 0.58, 1);
 				}
 			}
+
 		}
 	}
 
@@ -576,9 +578,5 @@ h2.heading-title{
 	}
 
 }
-
-
-
-
 
 
