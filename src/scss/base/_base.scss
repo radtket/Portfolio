@@ -1,0 +1,467 @@
+// ==========================================================================
+// Base Styles
+// ==========================================================================
+
+* {
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+html {
+	overflow-x: hidden !important;
+	width: 100%;
+	height: 100%;
+	position: relative;
+	-webkit-font-smoothing: antialiased;
+	text-rendering: optimizeLegibility;
+}
+
+body {
+	border: 0;
+	margin: 0;
+	padding: 0;
+	color: palette(grey);
+	font-size: $base__font-size;
+	font-family: $font-family--primary;
+	line-height: ($base__line/$base__font-size);
+}
+
+// Lists
+
+ul,
+li {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+// Images
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+section {
+	position: relative;
+}
+
+
+/* Typography
+================================================== */
+
+/*
+body, p {
+	font-family: $font-family--primary;
+	font-size: em(18px);
+	font-weight: $font-weight--light;; 
+	line-height: (27px/18px);
+}
+*/
+
+p {
+	margin: 0 0 em(30px, 18px);
+	font-weight: $font-weight--light;
+	font-size: em(18px);
+	line-height: (27px/18px);
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: $font-family--secondary;
+	text-transform: $uppercase;
+}
+
+h1 {
+	font-size: em(36px);
+	line-height: (48px/36px);
+}
+
+h2 {
+	font-size: em(30px);
+	line-height: em(24px);
+}
+
+h3 {
+	font-size: em(18px);
+	font-weight: $font-weight--medium;
+}
+
+h4 {
+    font-size: em(18px);
+    line-height: (20px/18px);
+    font-weight: $font-weight--bold;
+}
+
+h5 {
+    font-size: em(14px);
+    line-height: (24px/14px);
+}
+
+a {
+	color: $white; 
+	text-decoration: none;
+	font-weight: $font-weight--medium;
+	transition: all 0.27s cubic-bezier(0, 0, 0.58, 1);
+	-webkit-transition: all 0.27s cubic-bezier(0, 0, 0.58, 1);
+	-moz-transition: all 0.27s cubic-bezier(0, 0, 0.58, 1);
+	-o-transition: all 0.27s cubic-bezier(0, 0, 0.58, 1);
+	-ms-transition: all 0.27s cubic-bezier(0, 0, 0.58, 1);
+	&:link,
+	&:visited {
+		text-decoration: none;
+	}
+	&:hover {
+		color: $color-accent;
+		text-decoration: none;
+		cursor: pointer;
+	}
+}
+
+
+/*Global styles
+==============================================*/
+
+.section-padding {
+	padding: 50px 0px;
+}
+
+h2.heading-title{
+	margin-bottom: 50px;
+	font-weight: 700;
+}
+
+.section-heading {
+	@extend .text-center;
+	width: 80%;
+	margin: 0 auto;
+}
+
+.empty__section {
+  margin: 0;
+  padding: 0;
+  display: none;
+}
+
+/*=============================================
+  Hero styles
+================================================*/
+
+#hero {
+  background: url('../img/hero__img.jpg') $color-primary;
+  position: relative;
+  background-position: center;
+  background-attachment: fixed;
+
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+}
+
+.hero {
+
+	@include e(content) {
+		position: absolute;
+		top: 50%;
+		text-align: center;
+		width: 100%;
+		font-family: $font-family--primary;
+		text-transform: uppercase;
+		-ms-transform: translate(0, -50%);
+		/* IE 9 */
+		-webkit-transform: translate(0, -50%);
+		/* Safari */
+		transform: translate(0, -50%);
+	}
+
+	@include e(title) {
+		font-size: em(70px);
+		font-weight: $font-weight--medium;
+		line-height: (70px/70px);
+		font-weight: $font-weight--medium;
+		letter-spacing: 25px;
+		color: $gold;
+		@include m(sub) {
+			font-size: em(24px);
+			letter-spacing: 5px;
+			color: $white;
+			span {
+				color: $gold;
+				font-weight: 900;
+			}
+		}
+	}
+
+	@include e(logo) {
+		height: 75px;
+		widows: 75px;
+	}
+
+	@include e(icon) {
+		position: absolute;
+		left: 0px;
+		right: 0px;
+		bottom: 0px;
+		padding: 18px 0;
+		background-image: -webkit-linear-gradient(bottom, rgba(0, 0, 0, 0.83), transparent);
+		background-image: -o-linear-gradient(bottom, rgba(0, 0, 0, 0.83), transparent);
+		background-image: linear-gradient(to top, rgba(0, 0, 0, 0.83), transparent);
+		font-size: 22px;
+		text-align: center;
+		color: $gold;
+	}
+
+}
+
+/*=============================================
+  About styles
+================================================*/
+
+.about {
+  background: $white;
+
+  @include e(headline) {
+		@extend %hdln-prim;
+		color: $color-secondary;
+		// margin-bottom: em(70px, 42px);
+
+		@include pseudo-el(after, 150px, 5px) {
+			background: $color-accent;
+			bottom: 0;
+			left: 50%;
+			margin-left: -80px;
+		}
+	}
+
+  @include e(headshot) {
+	  max-width: 275px;
+	  height: auto;
+  }
+}
+
+
+/*=============================================
+  Services Section
+================================================*/
+
+.services {
+  background: $black-gray;
+
+	@include e(headline) {
+		@extend %hdln-prim;
+		color: $grey;
+		// margin-bottom: em(70px, 42px);
+
+		@include pseudo-el(after, 150px, 5px) {
+			background: $color-accent;
+			bottom: 0;
+			left: 50%;
+			margin-left: -80px;
+		}
+	}
+
+	h4 {
+		color: $white;
+	}
+
+	@include e(item) {
+		@extend .text-center;
+		border: 1px solid transparent;
+		padding: 7.5px 0;
+		transition: all 0.3s ease;
+		-webkit-transition: all 0.3s ease;
+		-o-transition: all 0.3s ease;
+	}
+
+	@include e(icon) {
+	  @extend .text-center;
+	  height: 140px;
+	  width: 140px;
+	  background-color: transparent;
+	  border: 4px solid $color-accent;
+	  border-radius: 50%;
+	  color: $grey;
+	  line-height: 140px;
+	  margin: 0 auto 20px auto;
+
+	  i {
+			font-size: 60px;
+			line-height: 140px;
+			transition: all 0.27s cubic-bezier(0, 0, 0.58, 1);
+			-webkit-transition: all 0.27s cubic-bezier(0, 0, 0.58, 1);
+			-moz-transition: all 0.27s cubic-bezier(0, 0, 0.58, 1);
+			-o-transition: all 0.27s cubic-bezier(0, 0, 0.58, 1);
+			-ms-transition: all 0.27s cubic-bezier(0, 0, 0.58, 1);
+			&:hover {
+				font-size: 65px;
+				line-height: 140px;
+			}
+	  }
+	}
+
+}
+
+
+/*=============================================
+  Legacy Section
+================================================*/
+
+.legacy {
+	@include img-replace('legacy__bg.jpg', 100%, 100%);
+	background-attachment: fixed;
+	background-size: cover;
+	background-position: top center;
+	color: $color-primary;
+	position: relative;
+
+  @include e(text) {
+		max-width: 75%;
+  }
+
+	.container {
+		z-index: 3;
+		position: relative;
+	}
+}
+
+
+/*=============================================
+  Client Section
+================================================*/
+
+.client {
+  position: relative;
+  background: $color-secondary;
+
+	@include e(headline) {
+		@extend %hdln-prim;
+		color: $grey;
+		// margin-bottom: em(70px, 42px);
+
+		@include m(sub) {
+			@extend %hdln-sec
+		}
+
+		@include pseudo-el(after, 150px, 5px) {
+			background: $color-accent;
+			bottom: 0;
+			left: 50%;
+			margin-left: -75px;
+		}
+	}
+}
+
+
+.bnbt,
+.btn-left,
+.bbbt,
+.btn-right {
+  border: 3px solid #313131;
+  padding: 15px;
+  width: 50px;
+  cursor: pointer;
+  z-index: 1;
+  color: $color-accent;
+  @extend %vertical-align;
+}
+
+.bnbt,
+.btn-left {
+  left: 0px;
+  border-left: none;
+}
+
+.bbbt,
+.btn-right {
+  right: 0px;
+  border-right: none;
+}
+
+
+.bnbt:hover,
+.bbbt:hover,
+.btn-left:hover,
+.btn-right:hover {
+  color: $color-accent;
+  background: rgba(0, 0, 0, 0.8);
+  transition: .2s;
+}
+
+
+.slick-dots li button:before {
+  font-size: 10px;
+  line-height: 20px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  content: '•';
+  opacity: .50;
+  color: #b2b3b7;
+}
+
+.slick-dots li.slick-active button:before {
+  color: #b6944c;
+}
+
+.close {
+  position: relative;
+  top: -13px;
+}
+
+
+
+
+
+.review {
+  background-attachment: fixed;
+  background-image: url("../img/testimonial__bg.jpg");
+  background-size: cover;
+  background-position: top center;
+  position: relative;
+		@include pseudo-el(after, 100%, 100%) {
+			background: linear-gradient(rgba(182, 148, 76, 0.5), rgba(0, 0, 0, 0.75));
+			top: 0;
+			left: 0;
+			z-index: 0;
+		}
+	
+	.review__slider,
+  .section-heading {
+		position: relative;
+		z-index: 2;
+  }
+
+  @include e(headline) {
+		@extend %hdln-prim;
+		color: $color-primary;
+
+		@include pseudo-el(after, 150px, 5px) {
+			background: $color-accent;
+			bottom: 0;
+			left: 50%;
+			margin-left: -80px;
+		}
+
+  }
+
+  @include e(icon) {
+  	color: $color-secondary;;
+  }
+
+	blockquote {
+		margin: 0;
+		border-left: 0;
+		text-align: center;
+
+		p {
+			margin-bottom: 15px;
+			color: #fff;
+		}
+
+		footer {
+			color: $color-accent;
+		}
+	}
+}

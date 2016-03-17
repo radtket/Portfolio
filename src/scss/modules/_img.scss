@@ -1,0 +1,60 @@
+// ==========================================================================
+// Images
+// ==========================================================================
+
+.triangle-overlay {
+	@include img-replace('triangle__overlay.png', 100%, 100%);
+	position: absolute;
+	top: 0;
+	left: 0;
+	background-repeat: repeat;
+	z-index: 1;
+}
+
+.afk {
+  @include slider-img('clients/client__afk.png')
+}
+
+.atown {
+  @include slider-img('clients/client__atown.png');
+}
+
+.audiofold {
+  @include slider-img('clients/client__audiofold.png')
+}
+
+.beat-down {
+  @include slider-img('clients/client__beatdown.png')
+}
+
+.brown {
+  @include slider-img('clients/client__brown.png')
+}
+
+.crva {
+  @include slider-img('clients/client__crva.png')
+}
+
+.fish {
+  @include slider-img('clients/client__fish.png')
+}
+
+.kai {
+  @include slider-img('clients/client__kai.png')
+}
+
+.kulture {
+  @include slider-img('clients/client__kulture.png')
+}
+
+.phenom {
+  @include slider-img('clients/client__phenom.png')
+}
+
+.sam {
+  @include slider-img('clients/client__sam.png')
+}
+
+.riffa {
+  @include slider-img('clients/client__riffa.png')
+}

@@ -1,0 +1,40 @@
+// ==========================================================================
+// Headlines
+// ==========================================================================
+
+/*
+.headline {
+
+
+	@include e(about) {
+		@extend %hdln-prim;
+		// margin-bottom: em(70px, 42px);
+
+		@include pseudo-el(after, 150px, 5px) {
+			background: $color-accent;
+			bottom: 0;
+			left: 50%;
+			margin-left: -80px;
+		}
+
+		@include m(grouped) {
+			@extend %hdln-prim;
+			margin-bottom: 0;
+		}
+	}
+
+ 	&--secondary {
+		@extend %hdln-sec;
+		margin-bottom: em(22px, 24px);
+
+		@include m(grouped) {
+			@extend %hdln-sec;
+			margin-top: em(10px, 24px);
+	 		margin-bottom: em(54px, 24px);
+		}		
+	}
+
+}
+
+*/
+
