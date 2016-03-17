@@ -93,8 +93,9 @@ h4 {
 }
 
 h5 {
-    font-size: em(14px);
-    line-height: (24px/14px);
+    font-size: em(16px);
+    line-height: (16px/16px);
+    letter-spacing: $letter-space;
 }
 
 a {
@@ -206,7 +207,6 @@ h2.heading-title{
 		background-image: -webkit-linear-gradient(bottom, rgba(0, 0, 0, 0.83), transparent);
 		background-image: -o-linear-gradient(bottom, rgba(0, 0, 0, 0.83), transparent);
 		background-image: linear-gradient(to top, rgba(0, 0, 0, 0.83), transparent);
-		font-size: 22px;
 		text-align: center;
 		color: $gold;
 	}
@@ -219,6 +219,7 @@ h2.heading-title{
 
 .about {
   background: $white;
+  color: $color-secondary;
 
   @include e(headline) {
 		@extend %hdln-prim;
@@ -249,14 +250,14 @@ h2.heading-title{
 
 	@include e(headline) {
 		@extend %hdln-prim;
-		color: $grey;
+		color: $white;
 		// margin-bottom: em(70px, 42px);
 
 		@include pseudo-el(after, 150px, 5px) {
 			background: $color-accent;
 			bottom: 0;
 			left: 50%;
-			margin-left: -80px;
+			margin-left: -75px;
 		}
 	}
 
@@ -335,11 +336,11 @@ h2.heading-title{
 
 	@include e(headline) {
 		@extend %hdln-prim;
-		color: $grey;
+		color: $white;
 		// margin-bottom: em(70px, 42px);
 
 		@include m(sub) {
-			@extend %hdln-sec
+			@extend %hdln-sec;
 		}
 
 		@include pseudo-el(after, 150px, 5px) {
@@ -412,7 +413,9 @@ h2.heading-title{
 
 
 
-
+/*=============================================
+  Testimonial Section
+================================================*/
 
 .review {
   background-attachment: fixed;
@@ -441,7 +444,7 @@ h2.heading-title{
 			background: $color-accent;
 			bottom: 0;
 			left: 50%;
-			margin-left: -80px;
+			margin-left: -75px;
 		}
 
   }
@@ -465,3 +468,117 @@ h2.heading-title{
 		}
 	}
 }
+
+
+
+
+
+
+
+
+
+
+/*=============================================
+  Contact Section
+================================================*/
+
+
+.contact {
+  background: $color-primary;
+
+  @include e(headline) {
+		@extend %hdln-prim;
+		color: $white;
+		// margin-bottom: em(70px, 42px);
+
+		@include pseudo-el(after, 150px, 5px) {
+			background: $color-accent;
+			bottom: 0;
+			left: 50%;
+			margin-left: -75px;
+		}
+	}
+
+	@include e(form) {
+		margin-top: 40px;
+	}
+
+	.form-control {
+		padding: 20px 0 20px 20px;
+		background-color: transparent;
+		border: none;
+		border-bottom: 5px solid $white;
+		border-radius: 0;
+		font-family: $font-family--secondary;
+		font-weight: $font-weight--medium;
+		letter-spacing: 4px;
+		text-transform: uppercase;
+		&:focus,
+		&:active {
+			border-color: $color-accent;
+			box-shadow: none;
+		}
+	}
+
+	textarea.form-control {
+		border: 5px solid $white;
+		margin-top: 40px;
+	}
+}
+
+
+
+
+
+
+
+/*=============================================
+  Footer Section
+================================================*/
+
+
+.footer {
+  background: $color-secondary;
+  padding-top: 30px;
+	i {
+	  color: $color-accent;
+	}
+	@include e(signature) {
+		@extend .center-block;
+		padding: 10px 0;
+	}
+	@include e(list) {
+		@extend .list-inline;
+		padding: 10px 0;
+		@include m(item) {
+			width: 45px;
+			height: 45px;
+			line-height: 45px !important;
+			position: relative;
+			margin: 0 15px;
+			a {
+			font-size: 24px;
+				@include pseudo-el(before, 100%, 100%) {
+					top: 0;
+					left: 0;
+					border: 1px solid $color-accent;
+					border-radius: 1px;
+					transform: rotate(45deg);
+					transition: all 0.27s cubic-bezier(0.3, 0.1, 0.58, 1);
+				}
+			}
+		}
+	}
+
+	@include e(rights) {
+		@extend .center-block;
+		padding: 20px 0;
+	}
+
+}
+
+
+
+
+
+

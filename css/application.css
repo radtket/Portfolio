@@ -1751,13 +1751,13 @@ ol ol {
   list-style: none;
 }
 
-.list-inline {
+.list-inline, .footer__list {
   padding-left: 0;
   list-style: none;
   margin-left: -5px;
 }
 
-.list-inline > li {
+.list-inline > li, .footer__list > li {
   display: inline-block;
   padding-left: 5px;
   padding-right: 5px;
@@ -7447,7 +7447,7 @@ button.close {
   clear: both;
 }
 
-.center-block {
+.center-block, .footer__signature, .footer__rights {
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -8034,7 +8034,7 @@ button.close {
   text-align: center;
 }
 
-.about__headline:after, .services__headline:after, .client__headline:after, .review:after, .review__headline:after {
+.about__headline:after, .services__headline:after, .client__headline:after, .review:after, .review__headline:after, .contact__headline:after, .footer__list--item a:before {
   display: block;
   content: '';
   position: absolute;
@@ -8361,8 +8361,9 @@ h4 {
 }
 
 h5 {
-  font-size: 0.875em;
-  line-height: 1.7142857143;
+  font-size: 1em;
+  line-height: 1;
+  letter-spacing: 2px;
 }
 
 a {
@@ -8470,7 +8471,6 @@ h2.heading-title {
   background-image: -webkit-linear-gradient(bottom, rgba(0, 0, 0, 0.83), transparent);
   background-image: -o-linear-gradient(bottom, rgba(0, 0, 0, 0.83), transparent);
   background-image: linear-gradient(to top, rgba(0, 0, 0, 0.83), transparent);
-  font-size: 22px;
   text-align: center;
   color: #b6944c;
 }
@@ -8480,6 +8480,7 @@ h2.heading-title {
 ================================================*/
 .about {
   background: #FBFBFB;
+  color: #101010;
 }
 
 .about__headline {
@@ -8508,7 +8509,7 @@ h2.heading-title {
 }
 
 .services__headline {
-  color: #b2b3b7;
+  color: #FBFBFB;
 }
 
 .services__headline:after {
@@ -8517,7 +8518,7 @@ h2.heading-title {
   background: #b6944c;
   bottom: 0;
   left: 50%;
-  margin-left: -80px;
+  margin-left: -75px;
 }
 
 .services h4 {
@@ -8592,7 +8593,7 @@ h2.heading-title {
 }
 
 .client__headline {
-  color: #b2b3b7;
+  color: #FBFBFB;
 }
 
 .client__headline:after {
@@ -8659,6 +8660,9 @@ h2.heading-title {
   top: -13px;
 }
 
+/*=============================================
+  Testimonial Section
+================================================*/
 .review {
   background-attachment: fixed;
   background-image: url("../img/testimonial__bg.jpg");
@@ -8692,7 +8696,7 @@ h2.heading-title {
   background: #b6944c;
   bottom: 0;
   left: 50%;
-  margin-left: -80px;
+  margin-left: -75px;
 }
 
 .review__icon {
@@ -8712,6 +8716,99 @@ h2.heading-title {
 
 .review blockquote footer {
   color: #b6944c;
+}
+
+/*=============================================
+  Contact Section
+================================================*/
+.contact {
+  background: #050706;
+}
+
+.contact__headline {
+  color: #FBFBFB;
+}
+
+.contact__headline:after {
+  width: 150px;
+  height: 5px;
+  background: #b6944c;
+  bottom: 0;
+  left: 50%;
+  margin-left: -75px;
+}
+
+.contact__form {
+  margin-top: 40px;
+}
+
+.contact .form-control {
+  padding: 20px 0 20px 20px;
+  background-color: transparent;
+  border: none;
+  border-bottom: 5px solid #FBFBFB;
+  border-radius: 0;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+}
+
+.contact .form-control:focus, .contact .form-control:active {
+  border-color: #b6944c;
+  box-shadow: none;
+}
+
+.contact textarea.form-control {
+  border: 5px solid #FBFBFB;
+  margin-top: 40px;
+}
+
+/*=============================================
+  Footer Section
+================================================*/
+.footer {
+  background: #101010;
+  padding-top: 30px;
+}
+
+.footer i {
+  color: #b6944c;
+}
+
+.footer__signature {
+  padding: 10px 0;
+}
+
+.footer__list {
+  padding: 10px 0;
+}
+
+.footer__list--item {
+  width: 45px;
+  height: 45px;
+  line-height: 45px !important;
+  position: relative;
+  margin: 0 15px;
+}
+
+.footer__list--item a {
+  font-size: 24px;
+}
+
+.footer__list--item a:before {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  border: 1px solid #b6944c;
+  border-radius: 1px;
+  transform: rotate(45deg);
+  transition: all 0.27s cubic-bezier(0.3, 0.1, 0.58, 1);
+}
+
+.footer__rights {
+  padding: 20px 0;
 }
 
 .panel, .panel--centered {
@@ -8810,7 +8907,7 @@ h2.heading-title {
   }
 }
 
-.about__headline, .services__headline, .client__headline, .review__headline {
+.about__headline, .services__headline, .client__headline, .review__headline, .contact__headline {
   font-size: 30px;
   line-height: 2.5;
   letter-spacing: 2px;
@@ -8824,7 +8921,7 @@ h2.heading-title {
 }
 
 .client__headline--sub {
-  color: #313131;
+  color: #b2b3b7;
   letter-spacing: 2px;
   font-weight: 400;
   font-size: 1.125em;
