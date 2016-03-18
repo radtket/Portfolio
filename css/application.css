@@ -1605,7 +1605,7 @@ mark,
   text-align: right;
 }
 
-.text-center, .section-heading, .hero__content, .services__item, .services__icon, .product__content {
+.text-center, .section-heading, .hero__content, .services__item, .services__icon, .product__content, .portfolio__nav {
   text-align: center;
 }
 
@@ -1751,13 +1751,13 @@ ol ol {
   list-style: none;
 }
 
-.list-inline, .footer__list {
+.list-inline, .footer__list, .portfolio__nav ul {
   padding-left: 0;
   list-style: none;
   margin-left: -5px;
 }
 
-.list-inline > li, .footer__list > li {
+.list-inline > li, .footer__list > li, .portfolio__nav ul > li {
   display: inline-block;
   padding-left: 5px;
   padding-right: 5px;
@@ -8024,7 +8024,7 @@ button.close {
   width: 1px;
 }
 
-.about__headline:after, .services__headline:after, .client__headline:after, .review:after, .review__headline:after, .contact__headline:after, .footer__list--item a:before, .product__headline:after {
+.about__headline:after, .services__headline:after, .client__headline:after, .review:after, .review__headline:after, .contact__headline:after, .footer__list--item a:before, .product__headline:after, .portfolio__headline:after {
   display: block;
   content: '';
   position: absolute;
@@ -8854,6 +8854,49 @@ h2.heading-title {
   color: #b6944c;
 }
 
+.portfolio {
+  background: #050706;
+}
+
+.portfolio__headline {
+  color: #FBFBFB;
+}
+
+.portfolio__headline:after {
+  width: 150px;
+  height: 5px;
+  background: #b6944c;
+  bottom: 0;
+  left: 50%;
+  margin-left: -75px;
+}
+
+.portfolio__nav ul {
+  margin-bottom: 30px;
+}
+
+.portfolio__nav a {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: #b6944c;
+}
+
+.portfolio__nav i {
+  color: #333;
+}
+
+.portfolio .col-xs-12 {
+  padding: 0;
+}
+
+.portfolio__item {
+  position: relative;
+  overflow: hidden;
+  max-height: 300px;
+}
+
 /*
 // Panel
 
@@ -8966,7 +9009,7 @@ h2.heading-title {
 }
 
 */
-.about__headline, .services__headline, .client__headline, .review__headline, .contact__headline, .product__headline {
+.about__headline, .services__headline, .client__headline, .review__headline, .contact__headline, .product__headline, .portfolio__headline {
   font-size: 30px;
   line-height: 2.5;
   letter-spacing: 2px;

@@ -35,10 +35,46 @@ $('.client__slider').slick({
 
 
 $('.review__slider').slick({
-    nextArrow: $(".btn-right"),
-    prevArrow: $(".btn-left"),
-    autoplaySpeed: 5000,
-    autoplay: true,
-    adaptiveHeight: true,
-    dots: true,
+  nextArrow: $(".btn-right"),
+  prevArrow: $(".btn-left"),
+  autoplaySpeed: 5000,
+  autoplay: true,
+  adaptiveHeight: true,
+  dots: true,
+});
+
+
+
+// Potfolio Filtering
+
+jQuery(function($) { 
+  
+  var $container = $('.portfolio__wrapper');
+  $container.isotope({
+    filter: '*',
+    animationOptions: {
+      duration: 5050,
+      easing: 'easeInOutExpo',
+      queue: false
+    }
   });
+
+
+  $('.portfolio__nav a').on( 'click', function() {
+    $(".portfolio__nav .active").removeClass("active");
+    $(this).addClass('active');
+
+    var filterValue = $(this).attr('data-filter');
+    $container.isotope({
+      filter: filterValue,
+      animationOptions: {
+        duration: 1250,
+        easing: 'easeInOutExpo',
+        queue: false
+      }
+    });
+    return false;
+  });
+
+
+}); // ENDS $(window).on("load", function()

@@ -654,3 +654,76 @@ h2.heading-title{
 	}
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.portfolio {
+	background: $color-primary;
+
+	@include e(headline) {
+			@extend %hdln-prim;
+			color: $white;
+
+		@include pseudo-el(after, 150px, 5px) {
+			background: $color-accent;
+			bottom: 0;
+			left: 50%;
+			margin-left: -75px;
+		}
+	}
+
+	@include e(nav) {
+		@extend .text-center;
+		ul {
+			@extend .list-inline;
+			margin-bottom: 30px;
+		}
+
+		a {
+			font-family: $font-family--secondary;
+			font-weight: $font-weight--bold ;
+			letter-spacing: 4px;
+			text-transform: $uppercase;
+			color: $color-accent;
+		}
+
+		i {
+			color: #333;
+		}
+	}
+
+	.col-xs-12 {
+		padding: 0;
+	}
+
+	@include e(wrapper) {
+		
+	}
+
+	@include e(item) {
+		position: relative;
+		overflow: hidden;
+		max-height: 300px;
+	}
+
+}
+
