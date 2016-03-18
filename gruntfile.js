@@ -22,8 +22,8 @@ module.exports = function(grunt) {
     uglify : {
     	// often called 'dist' instead of build
     	build: {
-    		src: 'src/js/*.js',
-    		dest: 'js/script.min.js'
+            src: 'js/script.min.js',
+            dest: 'js/script.min.js'
     	},
     	dev: {
     		options: {
@@ -84,5 +84,5 @@ module.exports = function(grunt) {
 
   // Register the default tasks.
   grunt.registerTask('default', ['concat:dev', 'uglify:dev', 'sass:dev']);
-  grunt.registerTask('build', ['uglify:build', 'sass:build']);
+  grunt.registerTask('build', ['concat:dev', 'uglify:build', 'sass:build']);
 };

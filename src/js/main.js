@@ -51,6 +51,11 @@ jQuery(function($) {
       width: jQuery(window).width(),
       height: jQuery(window).height()
     });
+
+    jQuery('#hero__rands').css({
+      width: jQuery(window).width(),
+      height: jQuery(window).height()
+    });
   }
 
   fullscreen();

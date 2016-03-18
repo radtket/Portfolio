@@ -118,6 +118,12 @@ a {
 	}
 }
 
+.dude {
+	margin: 30px auto;
+	visibility: hidden;
+	border: 0;
+	border-top: 1px solid #eee;
+}
 
 /*Global styles
 ==============================================*/
@@ -135,6 +141,7 @@ h2.heading-title{
 	@extend .text-center;
 	width: 80%;
 	margin: 0 auto;
+	padding-bottom: 30px;
 }
 
 .empty__section {
@@ -580,3 +587,70 @@ h2.heading-title{
 }
 
 
+
+
+
+
+
+
+
+
+/*=============================================
+  Product
+================================================*/
+
+#hero__rands {
+  background: url('../img/website__cardinal.jpg') $color-primary;
+  position: relative;
+  background-position: center center;
+  background-attachment: fixed;
+
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+}
+
+.product {
+
+	@include e(content) {
+		@extend .text-center;
+		position: absolute;
+		top: 50%;
+		width: 100%;
+		font-family: $font-family--primary;
+		text-transform: $uppercase;
+		transform: translate(0, -50%);
+		-ms-transform: translate(0, -50%);
+		-webkit-transform: translate(0, -50%);
+	}
+
+	@include e(headline) {
+		@extend %hdln-prim;
+		color: $white;
+		margin-bottom: 0px;
+
+		@include m(sub) {
+			@extend %hdln-sec;
+		}
+
+		@include pseudo-el(after, 150px, 5px) {
+			background: $color-accent;
+			bottom: 0;
+			left: 50%;
+			margin-left: -75px;
+		}
+	}
+
+	@include e(title) {
+		position: absolute;
+		left: 0px;
+		right: 0px;
+		bottom: 0px;
+		padding: 25px 0;
+		background: rgba(0, 0, 0, 0.5);
+		text-align: center;
+		color: $gold;
+	}
+
+}

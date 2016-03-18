@@ -1605,7 +1605,7 @@ mark,
   text-align: right;
 }
 
-.text-center, .section-heading, .hero__content, .services__item, .services__icon {
+.text-center, .section-heading, .hero__content, .services__item, .services__icon, .product__content {
   text-align: center;
 }
 
@@ -8024,7 +8024,7 @@ button.close {
   width: 1px;
 }
 
-.about__headline:after, .services__headline:after, .client__headline:after, .review:after, .review__headline:after, .contact__headline:after, .footer__list--item a:before {
+.about__headline:after, .services__headline:after, .client__headline:after, .review:after, .review__headline:after, .contact__headline:after, .footer__list--item a:before, .product__headline:after {
   display: block;
   content: '';
   position: absolute;
@@ -8377,6 +8377,13 @@ a:hover {
   cursor: pointer;
 }
 
+.dude {
+  margin: 30px auto;
+  visibility: hidden;
+  border: 0;
+  border-top: 1px solid #eee;
+}
+
 /*Global styles
 ==============================================*/
 .section-padding {
@@ -8391,6 +8398,7 @@ h2.heading-title {
 .section-heading {
   width: 80%;
   margin: 0 auto;
+  padding-bottom: 30px;
 }
 
 .empty__section {
@@ -8796,6 +8804,56 @@ h2.heading-title {
   padding: 20px 0;
 }
 
+/*=============================================
+  Product
+================================================*/
+#hero__rands {
+  background: url("../img/website__cardinal.jpg") #050706;
+  position: relative;
+  background-position: center center;
+  background-attachment: fixed;
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+}
+
+.product__content {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  font-family: "Raleway", sans-serif;
+  text-transform: uppercase;
+  transform: translate(0, -50%);
+  -ms-transform: translate(0, -50%);
+  -webkit-transform: translate(0, -50%);
+}
+
+.product__headline {
+  color: #FBFBFB;
+  margin-bottom: 0px;
+}
+
+.product__headline:after {
+  width: 150px;
+  height: 5px;
+  background: #b6944c;
+  bottom: 0;
+  left: 50%;
+  margin-left: -75px;
+}
+
+.product__title {
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  padding: 25px 0;
+  background: rgba(0, 0, 0, 0.5);
+  text-align: center;
+  color: #b6944c;
+}
+
 /*
 // Panel
 
@@ -8908,11 +8966,10 @@ h2.heading-title {
 }
 
 */
-.about__headline, .services__headline, .client__headline, .review__headline, .contact__headline {
+.about__headline, .services__headline, .client__headline, .review__headline, .contact__headline, .product__headline {
   font-size: 30px;
   line-height: 2.5;
   letter-spacing: 2px;
-  margin-bottom: 30px;
   margin-top: 0;
   position: relative;
   text-transform: uppercase;
@@ -8921,13 +8978,15 @@ h2.heading-title {
   font-weight: 600;
 }
 
-.client__headline--sub {
+.client__headline--sub, .product__headline--sub {
   color: #b2b3b7;
   letter-spacing: 2px;
   font-weight: 400;
   font-size: 1.125em;
   font-family: "Montserrat", sans-serif;
   text-transform: uppercase;
+  line-height: 2.5;
+  margin-bottom: 0px;
 }
 
 .triangle-overlay {
