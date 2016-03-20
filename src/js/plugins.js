@@ -1,3 +1,6 @@
+jQuery(document).ready(function($) {
+  
+
 $('.client__slider').slick({
   nextArrow: $(".bbbt"),
   prevArrow: $(".bnbt"),
@@ -47,15 +50,22 @@ $('.review__slider').slick({
 
 // Potfolio Filtering
 
-jQuery(function($) { 
-  
-  var $container = $('.portfolio__wrapper');
+
+$(window).on('load', function(event) {
+  event.preventDefault();
+  /* Act on the event */
+
+var $container = $('.portfolio__wrapper');
   $container.isotope({
     filter: '*',
+    layoutMode: 'fitRows',
     animationOptions: {
       duration: 5050,
       easing: 'easeInOutExpo',
       queue: false
+    },
+    masonry: {
+      columnWidth: 0
     }
   });
 
@@ -76,5 +86,26 @@ jQuery(function($) {
     return false;
   });
 
+});
 
-}); // ENDS $(window).on("load", function()
+
+
+
+
+
+
+$(function() {
+  $('a.page-scroll').bind('click', function(event) {
+    var $anchor = $(this);
+    $('html, body').stop().animate({
+    scrollTop: $($anchor.attr('href')).offset().top
+    }, 1500, 'easeInOutExpo');
+    event.preventDefault();
+  });
+});
+
+  
+
+
+
+}); // End jQuery(document).ready(function($)

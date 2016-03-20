@@ -8024,7 +8024,7 @@ button.close {
   width: 1px;
 }
 
-.about__headline:after, .services__headline:after, .client__headline:after, .review:after, .review__headline:after, .contact__headline:after, .footer__list--item a:before, .product__headline:after, .portfolio__headline:after {
+.about__headline:after, .services__headline:after, .client__headline:after, .review:after, .review__headline:after, .contact__headline:after, .footer__list--item a:before, .product__headline:after, .portfolio__headline:after, .portfolio__nav a.active:before, .portfolio__content__inner a:after, .portfolio__content__inner a:hover:before {
   display: block;
   content: '';
   position: absolute;
@@ -8488,7 +8488,7 @@ h2.heading-title {
   background: #b6944c;
   bottom: 0;
   left: 50%;
-  margin-left: -80px;
+  margin-left: -77px;
 }
 
 .about__headshot {
@@ -8513,7 +8513,7 @@ h2.heading-title {
   background: #b6944c;
   bottom: 0;
   left: 50%;
-  margin-left: -75px;
+  margin-left: -77px;
 }
 
 .services h4 {
@@ -8597,7 +8597,7 @@ h2.heading-title {
   background: #b6944c;
   bottom: 0;
   left: 50%;
-  margin-left: -75px;
+  margin-left: -77px;
 }
 
 .bnbt,
@@ -8691,7 +8691,7 @@ h2.heading-title {
   background: #b6944c;
   bottom: 0;
   left: 50%;
-  margin-left: -75px;
+  margin-left: -77px;
 }
 
 .review__icon {
@@ -8718,6 +8718,7 @@ h2.heading-title {
 ================================================*/
 .contact {
   background: #050706;
+  padding-bottom: 70px;
 }
 
 .contact__headline {
@@ -8730,11 +8731,7 @@ h2.heading-title {
   background: #b6944c;
   bottom: 0;
   left: 50%;
-  margin-left: -75px;
-}
-
-.contact__form {
-  margin-top: 40px;
+  margin-left: -77px;
 }
 
 .contact .form-control {
@@ -8840,7 +8837,7 @@ h2.heading-title {
   background: #b6944c;
   bottom: 0;
   left: 50%;
-  margin-left: -75px;
+  margin-left: -77px;
 }
 
 .product__title {
@@ -8866,9 +8863,9 @@ h2.heading-title {
   width: 150px;
   height: 5px;
   background: #b6944c;
-  bottom: 0;
   left: 50%;
-  margin-left: -75px;
+  bottom: -7.5px;
+  margin-left: -77px;
 }
 
 .portfolio__nav ul {
@@ -8881,20 +8878,193 @@ h2.heading-title {
   letter-spacing: 4px;
   text-transform: uppercase;
   color: #b6944c;
+  position: relative;
+}
+
+.portfolio__nav a.active:before {
+  width: 100%;
+  height: 2px;
+  background: #b6944c;
+  bottom: -7.5px;
+  margin-left: -4px;
 }
 
 .portfolio__nav i {
   color: #333;
 }
 
-.portfolio .col-xs-12 {
+.portfolio__wrapper .col-xs-12 {
   padding: 0;
 }
 
 .portfolio__item {
   position: relative;
   overflow: hidden;
-  max-height: 300px;
+}
+
+.portfolio__item img {
+  width: 100%;
+  -webkit-transition: all 0.4s ease-in-out 0s;
+  -moz-transition: all 0.4s ease-in-out 0s;
+  -o-transition: all 0.4s ease-in-out 0s;
+  transition: all 0.4s ease-in-out 0s;
+}
+
+.portfolio__item:hover img {
+  -webkit-transform: scale(1.1);
+  -moz-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  -o-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
+.portfolio__item:hover .portfolio__content {
+  opacity: 1;
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  -ms-transform: scale(1);
+  -o-transform: scale(1);
+  transform: scale(1);
+}
+
+.portfolio__item:hover .portfolio__content__inner > span {
+  opacity: 1;
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  -ms-transform: scale(1);
+  -o-transform: scale(1);
+  transform: scale(1);
+}
+
+.portfolio__item:hover .portfolio__content__inner h2 {
+  opacity: 1;
+  bottom: 0;
+}
+
+.portfolio__item:hover .portfolio__content__inner p {
+  opacity: 1;
+  bottom: 0;
+}
+
+.portfolio__content {
+  background-color: rgba(5, 7, 6, 0.6);
+  bottom: 10px;
+  left: 10px;
+  opacity: 0;
+  position: absolute;
+  right: 10px;
+  text-align: center;
+  top: 10px;
+  -webkit-transform: scale(0.5);
+  -moz-transform: scale(0.5);
+  -ms-transform: scale(0.5);
+  -o-transform: scale(0.5);
+  transform: scale(0.5);
+  -webkit-transition: all 0.3s ease-in-out 0s;
+  -moz-transition: all 0.3s ease-in-out 0s;
+  -o-transition: all 0.3s ease-in-out 0s;
+  transition: all 0.3s ease-in-out 0s;
+}
+
+.portfolio__content:after {
+  content: "";
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+}
+
+.portfolio__content__inner {
+  display: inline-block;
+  position: relative;
+  vertical-align: middle;
+  max-width: 100%;
+  z-index: 4;
+}
+
+.portfolio__content__inner > span {
+  opacity: 0;
+  display: inline-block;
+  -webkit-transform: scale(0);
+  -moz-transform: scale(0);
+  -ms-transform: scale(0);
+  -o-transform: scale(0);
+  transform: scale(0);
+}
+
+.portfolio__content__inner .btn1 {
+  -webkit-transition: all 0.3s ease-in-out 0.2s;
+  -moz-transition: all 0.3s ease-in-out 0.2s;
+  -o-transition: all 0.3s ease-in-out 0.2s;
+  transition: all 0.3s ease-in-out 0.2s;
+}
+
+.portfolio__content__inner .btn2 {
+  -webkit-transition: all 0.3s ease-in-out 0.4s;
+  -moz-transition: all 0.3s ease-in-out 0.4s;
+  -o-transition: all 0.3s ease-in-out 0.4s;
+  transition: all 0.3s ease-in-out 0.4s;
+}
+
+.portfolio__content__inner a {
+  width: 45px;
+  height: 45px;
+  line-height: 45px !important;
+  position: relative;
+  margin: 0 15px;
+  display: inline-block;
+}
+
+.portfolio__content__inner a:after {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  border: 2px solid #b6944c;
+  transform: rotate(45deg);
+}
+
+.portfolio__content__inner a i {
+  position: relative;
+  z-index: 15;
+}
+
+.portfolio__content__inner a:hover {
+  color: #b6944c;
+}
+
+.portfolio__content__inner a:hover:before {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: #050706;
+  transform: rotate(45deg);
+}
+
+.portfolio__content__inner h2 {
+  bottom: -20px;
+  margin: 10px 0 0;
+  font-weight: 700;
+  font-size: 1.5em;
+  line-height: 2;
+  opacity: 0;
+  letter-spacing: 1px;
+  position: relative;
+  -webkit-transition: all 0.3s ease-in-out 0.6s;
+  -moz-transition: all 0.3s ease-in-out 0.6s;
+  -o-transition: all 0.3s ease-in-out 0.6s;
+  transition: all 0.3s ease-in-out 0.6s;
+}
+
+.portfolio__content__inner p {
+  bottom: -20px;
+  letter-spacing: 1px;
+  font-size: 1em;
+  position: relative;
+  -webkit-transition: all 0.3s ease-in-out 0.6s;
+  -moz-transition: all 0.3s ease-in-out 0.6s;
+  -o-transition: all 0.3s ease-in-out 0.6s;
+  transition: all 0.3s ease-in-out 0.6s;
 }
 
 /*
@@ -9470,7 +9640,7 @@ a.btn-custom:active {
 }
 */
 .section-menu {
-  z-index: 9999;
+  z-index: 100;
 }
 
 .navbar-default {

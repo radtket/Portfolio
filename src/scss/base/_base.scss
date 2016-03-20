@@ -235,7 +235,7 @@ h2.heading-title{
 			background: $color-accent;
 			bottom: 0;
 			left: 50%;
-			margin-left: -80px;
+			margin-left: -77px;
 		}
 	}
 
@@ -262,7 +262,7 @@ h2.heading-title{
 			background: $color-accent;
 			bottom: 0;
 			left: 50%;
-			margin-left: -75px;
+			margin-left: -77px;
 		}
 	}
 
@@ -352,7 +352,7 @@ h2.heading-title{
 			background: $color-accent;
 			bottom: 0;
 			left: 50%;
-			margin-left: -75px;
+			margin-left: -77px;
 		}
 	}
 }
@@ -449,7 +449,7 @@ h2.heading-title{
 			background: $color-accent;
 			bottom: 0;
 			left: 50%;
-			margin-left: -75px;
+			margin-left: -77px;
 		}
 
   }
@@ -489,7 +489,8 @@ h2.heading-title{
 
 
 .contact {
-  background: $color-primary;
+	background: $color-primary;
+	padding-bottom: 70px;
 
   @include e(headline) {
 		@extend %hdln-prim;
@@ -500,12 +501,12 @@ h2.heading-title{
 			background: $color-accent;
 			bottom: 0;
 			left: 50%;
-			margin-left: -75px;
+			margin-left: -77px;
 		}
 	}
 
 	@include e(form) {
-		margin-top: 40px;
+
 	}
 
 	.form-control {
@@ -638,7 +639,7 @@ h2.heading-title{
 			background: $color-accent;
 			bottom: 0;
 			left: 50%;
-			margin-left: -75px;
+			margin-left: -77px;
 		}
 	}
 
@@ -685,9 +686,9 @@ h2.heading-title{
 
 		@include pseudo-el(after, 150px, 5px) {
 			background: $color-accent;
-			bottom: 0;
 			left: 50%;
-			margin-left: -75px;
+			bottom: -7.5px;
+			margin-left: -77px;
 		}
 	}
 
@@ -704,6 +705,16 @@ h2.heading-title{
 			letter-spacing: 4px;
 			text-transform: $uppercase;
 			color: $color-accent;
+			position: relative;
+
+			&.active {
+				@include pseudo-el(before, 100%, 2px) {
+					background: $color-accent;
+					bottom: -7.5px;
+					margin-left: -4px;
+				}
+			}
+
 		}
 
 		i {
@@ -711,19 +722,206 @@ h2.heading-title{
 		}
 	}
 
-	.col-xs-12 {
-		padding: 0;
-	}
+
 
 	@include e(wrapper) {
+
+		.col-xs-12 {
+			padding: 0;
+		}
 		
 	}
 
 	@include e(item) {
 		position: relative;
 		overflow: hidden;
-		max-height: 300px;
+
+		img {
+			width: 100%;
+			-webkit-transition: all 0.4s ease-in-out 0s;
+			-moz-transition: all 0.4s ease-in-out 0s;
+			-o-transition: all 0.4s ease-in-out 0s;
+			transition: all 0.4s ease-in-out 0s;
+		}
+
+		&:hover {
+
+			img {
+				-webkit-transform: scale(1.1);
+				-moz-transform: scale(1.1);
+				-ms-transform: scale(1.1);
+				-o-transform: scale(1.1);
+				transform: scale(1.1);
+			}
+
+			.portfolio__content {
+				opacity: 1;
+				-webkit-transform: scale(1);
+				-moz-transform: scale(1);
+				-ms-transform: scale(1);
+				-o-transform: scale(1);
+				transform: scale(1);
+			}
+
+			.portfolio__content__inner { 
+				> span {
+					opacity: 1;
+					-webkit-transform: scale(1);
+					-moz-transform: scale(1);
+					-ms-transform: scale(1);
+					-o-transform: scale(1);
+					transform: scale(1);
+				}
+
+				h2 {
+					opacity: 1;
+					bottom: 0;
+				}
+
+				p {
+					opacity: 1;
+					bottom: 0;
+				}
+
+			}
+
+		}
+
+	}
+
+	@include e(content) {
+	  background-color: rgba($color-primary, 0.6);
+	  bottom: 10px;
+	  left: 10px;
+	  opacity: 0;
+	  position: absolute;
+	  right: 10px;
+	  text-align: center;
+	  top: 10px;
+	  -webkit-transform: scale(0.5);
+	  -moz-transform: scale(0.5);
+	  -ms-transform: scale(0.5);
+	  -o-transform: scale(0.5);
+	  transform: scale(0.5);
+	  -webkit-transition: all 0.3s ease-in-out 0s;
+	  -moz-transition: all 0.3s ease-in-out 0s;
+	  -o-transition: all 0.3s ease-in-out 0s;
+	  transition: all 0.3s ease-in-out 0s;
+
+	  &:after {
+			content: "";
+			display: inline-block;
+			height: 100%;
+			vertical-align: middle;
+	  }
+
+	  @include e(inner) {
+			display: inline-block;
+			position: relative;
+			vertical-align: middle;
+			max-width: 100%;
+			z-index: 4;
+
+			> span {
+				opacity: 0;
+				display: inline-block;
+				-webkit-transform: scale(0);
+				-moz-transform: scale(0);
+				-ms-transform: scale(0);
+				-o-transform: scale(0);
+				transform: scale(0);
+			}
+
+			.btn1 {
+				-webkit-transition: all 0.3s ease-in-out 0.2s;
+				-moz-transition: all 0.3s ease-in-out 0.2s;
+				-o-transition: all 0.3s ease-in-out 0.2s;
+				transition: all 0.3s ease-in-out 0.2s;
+			}
+
+			.btn2 {
+				-webkit-transition: all 0.3s ease-in-out 0.4s;
+				-moz-transition: all 0.3s ease-in-out 0.4s;
+				-o-transition: all 0.3s ease-in-out 0.4s;
+				transition: all 0.3s ease-in-out 0.4s;
+			}
+
+			a {
+				width: 45px;
+				height: 45px;
+				line-height: 45px !important;
+				position: relative;
+				margin: 0 15px;
+				display: inline-block;
+				@include pseudo-el(after, 100%, 100%) {
+					top: 0;
+					left: 0;
+					border: 2px solid $color-accent;
+					transform: rotate(45deg);
+				}
+				i {
+					position: relative;
+					z-index: 15;
+				}
+				&:hover {
+					color: $color-accent;
+					@include pseudo-el(before, 100%, 100%) {
+						top: 0;
+						left: 0;
+						background: $color-primary;
+						transform: rotate(45deg);
+					}
+
+
+				}
+
+
+			}
+
+			h2 {
+				bottom: -20px;
+				margin: 10px 0 0;
+				font-weight: 700;
+				font-size: em(24px);
+				line-height: 2;
+				opacity: 0;
+				letter-spacing: 1px;
+				position: relative;
+				-webkit-transition: all 0.3s ease-in-out 0.6s;
+				-moz-transition: all 0.3s ease-in-out 0.6s;
+				-o-transition: all 0.3s ease-in-out 0.6s;
+				transition: all 0.3s ease-in-out 0.6s;
+			}
+
+			p {
+				bottom: -20px;
+				letter-spacing: 1px;
+				font-size: em(16px);
+				position: relative;
+				-webkit-transition: all 0.3s ease-in-out 0.6s;
+				-moz-transition: all 0.3s ease-in-out 0.6s;
+				-o-transition: all 0.3s ease-in-out 0.6s;
+				transition: all 0.3s ease-in-out 0.6s;
+			}
+
+	  }
 	}
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
