@@ -118,13 +118,6 @@ a {
 	}
 }
 
-.dude {
-	margin: 30px auto;
-	visibility: hidden;
-	border: 0;
-	border-top: 1px solid #eee;
-}
-
 /*Global styles
 ==============================================*/
 
@@ -150,8 +143,15 @@ h2.heading-title{
   display: none;
 }
 
+.ghost {
+	margin: 30px auto;
+	visibility: hidden;
+	border: 0;
+	border-top: 1px solid #eee;
+}
+
 /*=============================================
-  Hero styles
+  Main Hero
 ================================================*/
 
 #hero__main {
@@ -407,12 +407,7 @@ h2.heading-title{
 }
 
 .slick-dots li.slick-active button:before {
-  color: #b6944c;
-}
-
-.close {
-  position: relative;
-  top: -13px;
+  color: $color-accent;
 }
 
 
@@ -454,7 +449,7 @@ h2.heading-title{
   }
 
   @include e(icon) {
-  	color: $color-secondary;;
+  	color: $color-secondary;
   }
 
 	blockquote {
@@ -506,41 +501,45 @@ h2.heading-title{
 
 	@include e(form) {
 
+		@include m(control) {
+			@extend .form-control;
+			padding: 20px 0 20px 20px;
+			background-color: transparent;
+			border: none;
+			border-bottom: 5px solid $white;
+			border-radius: 0;
+			font-family: $font-family--secondary;
+			font-weight: $font-weight--medium;
+			letter-spacing: 4px;
+			text-transform: uppercase;
+			&:focus,
+			&:active {
+				border-color: $color-accent;
+				box-shadow: none;
+			}
+		}
+
+		@include m(group) {
+			@extend .form-group;
+		}
+
 	}
 
-	.form-control {
-		padding: 20px 0 20px 20px;
-		background-color: transparent;
-		border: none;
-		border-bottom: 5px solid $white;
-		border-radius: 0;
-		font-family: $font-family--secondary;
-		font-weight: $font-weight--medium;
-		letter-spacing: 4px;
-		text-transform: uppercase;
+	textarea.contact__form--control {
+		border: 5px solid $white;
+		margin-top: 40px;
 		&:focus,
 		&:active {
 			border-color: $color-accent;
 			box-shadow: none;
 		}
 	}
-
-	textarea.form-control {
-		border: 5px solid $white;
-		margin-top: 40px;
-	}
 }
-
-
-
-
-
 
 
 /*=============================================
   Footer Section
 ================================================*/
-
 
 .footer {
   background: $color-secondary;
@@ -587,15 +586,7 @@ h2.heading-title{
 }
 
 
-
-
-
-
-
-
-
-
-/*=============================================
+/*==============================================
   Product
 ================================================*/
 
@@ -665,28 +656,18 @@ h2.heading-title{
 		color: $gold;
 	}
 
+
+	@include e(button) {
+		@extend .text-center;
+		margin-top: 30px;
+	}
+
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+/*==============================================
+  Portfolio Section
+================================================*/
 
 .portfolio {
 	background: $color-primary;
@@ -725,22 +706,17 @@ h2.heading-title{
 					margin-left: -4px;
 				}
 			}
-
 		}
 
 		i {
 			color: #333;
 		}
-	}
-
-
+	} // end .portfolio__nav
 
 	@include e(wrapper) {
-
 		.col-xs-12 {
 			padding: 0;
 		}
-		
 	}
 
 	@include e(item) {
@@ -784,31 +760,25 @@ h2.heading-title{
 					transform: scale(1);
 				}
 
-				h2 {
-					opacity: 1;
-					bottom: 0;
-				}
-
+				h2,
 				p {
 					opacity: 1;
 					bottom: 0;
 				}
-
 			}
 
-		}
-
-	}
+		} // end .portfolio__item:hover
+	} // end .portfolio__item
 
 	@include e(content) {
+		@extend .text-center;
 	  background-color: rgba($color-primary, 0.6);
+	  right: 10px;
+	  top: 10px;
 	  bottom: 10px;
 	  left: 10px;
 	  opacity: 0;
 	  position: absolute;
-	  right: 10px;
-	  text-align: center;
-	  top: 10px;
 	  -webkit-transform: scale(0.5);
 	  -moz-transform: scale(0.5);
 	  -ms-transform: scale(0.5);
@@ -857,6 +827,7 @@ h2.heading-title{
 				transition: all 0.3s ease-in-out 0.4s;
 			}
 
+
 			a {
 				width: 45px;
 				height: 45px;
@@ -870,10 +841,12 @@ h2.heading-title{
 					border: 2px solid $color-accent;
 					transform: rotate(45deg);
 				}
+
 				i {
 					position: relative;
 					z-index: 15;
 				}
+
 				&:hover {
 					color: $color-accent;
 					@include pseudo-el(before, 100%, 100%) {
@@ -882,21 +855,20 @@ h2.heading-title{
 						background: $color-primary;
 						transform: rotate(45deg);
 					}
-
-
 				}
 
-
 			}
+
 
 			h2 {
 				bottom: -20px;
 				margin: 10px 0 0;
-				font-weight: 700;
+				font-weight: $font-weight--bold;
 				font-size: em(24px);
 				line-height: 2;
 				opacity: 0;
-				letter-spacing: 1px;
+				letter-spacing: $letter-space;
+
 				position: relative;
 				-webkit-transition: all 0.3s ease-in-out 0.6s;
 				-moz-transition: all 0.3s ease-in-out 0.6s;
@@ -907,7 +879,8 @@ h2.heading-title{
 			p {
 				bottom: -20px;
 				letter-spacing: 1px;
-				font-size: em(16px);
+				font-size: em(14px);
+
 				position: relative;
 				-webkit-transition: all 0.3s ease-in-out 0.6s;
 				-moz-transition: all 0.3s ease-in-out 0.6s;
@@ -915,10 +888,9 @@ h2.heading-title{
 				transition: all 0.3s ease-in-out 0.6s;
 			}
 
-	  }
-	}
-
-}
+	  } // end .portfolio__content__inner
+	} // end .portfolio__content
+} // end .portfolio
 
 
 

@@ -37,24 +37,18 @@
 .btn-custom,
 a.btn-custom {
   font-family: $font-family--secondary;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
   padding: 4px 13px;
   color: $white;
-  background: rgba(34, 34, 34, .9);
+  background: rgba($color-primary, .9);
   border: 3px solid transparent;
   font-size: 11px;
   font-weight: $font-weight--bold;
-  text-transform: uppercase;
+  text-transform: $uppercase;
   text-decoration: none;
-  letter-spacing: 2px;
+  letter-spacing: $letter-space;
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
   border-radius: 0;
-  -webkit-box-shadow: none;
-  -moz-box-shadow: none;
-  box-shadow: none;
   -webkit-transition: all 0.2s cubic-bezier(0.000, 0.000, 0.580, 1.000);
   -moz-transition: all 0.2s cubic-bezier(0.000, 0.000, 0.580, 1.000);
   -o-transition: all 0.2s cubic-bezier(0.000, 0.000, 0.580, 1.000);
@@ -98,14 +92,14 @@ a.btn-custom {
 }
 
 .btn-custom.btn-glass {
-  color: rgba(255, 255, 255, .75);
-  background: rgba(0, 0, 0, .40);
+  color: rgba($white, .75);
+  background: rgba($color-primary, .40);
 }
 
 .btn-custom.btn-glass:hover,
 .btn-custom.btn-glass:focus {
-  color: rgba(255, 255, 255, 1);
-  background: rgba(0, 0, 0, 1);
+  color: rgba($white, 1);
+  background: rgba($color-primary, 1);
 }
 
 .btn-custom.btn-border {
@@ -116,7 +110,7 @@ a.btn-custom {
 
 .btn-custom.btn-border:hover,
 .btn-custom.btn-border:focus {
-  color: $white;
+  color: $color-accent;
   border-color: transparent;
   background: $color-primary ;
 }
@@ -136,7 +130,7 @@ a.btn-custom {
 
 .btn-custom.btn-border-w {
   color: $white;
-  border: 3px solid rgba(255, 255, 255, .75);
+  border: 5px solid $white;
   background: transparent;
 }
 
@@ -144,12 +138,12 @@ a.btn-custom {
 .btn-custom.btn-border-w:focus {
   color: $color-primary;
   border-color: transparent;
-  background: $white;
+  background: $color-accent;
 }
 
 .btn-custom.btn-w {
   color: $color-secondary;
-  background: rgba(255, 255, 255, .8);
+  background: rgba($white, .8);
 }
 
 .btn-custom.btn-w:hover,

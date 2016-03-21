@@ -61,6 +61,11 @@ jQuery(function($) {
   });
 
 
+  $('a#sourceDownload').attr({ target : '_blank', 
+                       href   : 'https://github.com/radtket/Portfolio/archive/gh-pages.zip'
+                     });
+
+
 
   // Lightbox
 
