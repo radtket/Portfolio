@@ -154,7 +154,7 @@ h2.heading-title{
   Hero styles
 ================================================*/
 
-#hero {
+#hero__main {
   background: url('../img/hero__img.jpg') $color-primary;
   position: relative;
   background-position: center;
@@ -199,8 +199,7 @@ h2.heading-title{
 	}
 
 	@include e(logo) {
-		height: 75px;
-		widows: 75px;
+		@include img-replace("logo__white.svg", 75px, 75px, inline-block);
 	}
 
 	@include e(icon) {
@@ -601,9 +600,21 @@ h2.heading-title{
 ================================================*/
 
 #hero__rands {
-  background: url('../img/website__cardinal.jpg') $color-primary;
+  background: url('../img/portfolio/rands/rands__hero.jpg') $color-primary;
   position: relative;
-  background-position: center center;
+  background-position: center 40%;
+  background-attachment: fixed;
+
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+}
+
+#hero__green {
+  background: url('../img/portfolio/greenCan/greenCan__hero.jpg') $color-primary;
+  position: relative;
+  background-position: center 40%;
   background-attachment: fixed;
 
   background-size: cover;

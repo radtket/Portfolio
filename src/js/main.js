@@ -47,12 +47,7 @@ jQuery(function($) {
 
        // Defining a function to set size for #hero 
   function fullscreen() {
-    jQuery('#hero').css({
-      width: jQuery(window).width(),
-      height: jQuery(window).height()
-    });
-
-    jQuery('#hero__rands').css({
+    jQuery('.hero').css({
       width: jQuery(window).width(),
       height: jQuery(window).height()
     });

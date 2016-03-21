@@ -51,14 +51,19 @@
 }
 
 .navbar-brand img {
-	float: left;
-	margin-left: 45px;
-	margin-top: 23.5px;
+	max-height: 70px;
+	width: 100%;
 }
 
+span.signature {
+	@include img-replace("Untitled-4.svg", 200px, 70px, inline-block);
+	background-size: contain;
+}
 
 .navbar-brand {
-	margin: 0;
-	padding: 0;
-	height: 0;
+    float: left;
+    padding: 10px 10px;
+    /* font-size: 18px; */
+    /* line-height: 20px; */
+    height: 90px;
 }
