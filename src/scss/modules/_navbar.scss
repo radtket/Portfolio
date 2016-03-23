@@ -56,14 +56,26 @@
 }
 
 span.signature {
-	@include img-replace("Untitled-4.svg", 200px, 70px, inline-block);
+	@include img-replace("Untitled-4.svg", 150px, 50px, inline-block);
 	background-size: contain;
+	margin: 20px 10px;
 }
 
-.navbar-brand {
-    float: left;
-    padding: 10px 10px;
-    /* font-size: 18px; */
-    /* line-height: 20px; */
-    height: 90px;
+
+.navbar-toggle {
+    position: relative;
+    float: right;
+    margin: 21.5px;
+    margin-left: 0px;
+    padding: 12px;
+    background-color: transparent;
+    background-image: none;
+    border: 3px solid transparent;
+    border-radius: 0;
+	.icon-bar {
+		display: block;
+		width: 22px;
+		height: 3px;
+		border-radius: 0;
+	}
 }

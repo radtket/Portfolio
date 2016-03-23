@@ -469,14 +469,6 @@ h2.heading-title{
 }
 
 
-
-
-
-
-
-
-
-
 /*=============================================
   Contact Section
 ================================================*/
@@ -572,6 +564,23 @@ h2.heading-title{
 					left: 0;
 					border: 2px solid $color-accent;
 					transform: rotate(45deg);
+				}
+
+				i {
+					position: relative;
+					z-index: 15;
+				}
+
+				&:hover,
+				&:visited,
+				&:active {
+					color: $color-accent;
+					@include pseudo-el(before, 100%, 100%) {
+						top: 0;
+						left: 0;
+						transform: rotate(45deg);
+						background: $color-primary;
+					}
 				}
 			}
 
@@ -847,7 +856,9 @@ h2.heading-title{
 					z-index: 15;
 				}
 
-				&:hover {
+				&:hover,
+				&:visited,
+				&:active {
 					color: $color-accent;
 					@include pseudo-el(before, 100%, 100%) {
 						top: 0;
