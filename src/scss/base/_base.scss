@@ -572,7 +572,6 @@ h2.heading-title{
 				}
 
 				&:hover,
-				&:visited,
 				&:active {
 					color: $color-accent;
 					@include pseudo-el(before, 100%, 100%) {
@@ -857,7 +856,6 @@ h2.heading-title{
 				}
 
 				&:hover,
-				&:visited,
 				&:active {
 					color: $color-accent;
 					@include pseudo-el(before, 100%, 100%) {

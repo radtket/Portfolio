@@ -108,11 +108,12 @@
           <i class="fa fa-code"></i>
         </div>
         <h4>Web Design</h4>
-        <!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum, rerum!</p> -->
+        <!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum, rerum!</p>
         <a href="#portfolio" class="btn btn-custom btn-border-w btn-small">
           Learn More &nbsp;
           <i class="fa fa-angle-right"></i>
         </a>
+         -->
       </div>
 
       <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3 services__item" data-wow-offset="300">
@@ -120,33 +121,36 @@
           <i class="fa fa-pencil-square-o"></i>
         </div>
         <h4>Logo Design</h4>
-        <!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum, rerum!</p> -->
+        <!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum, rerum!</p>
         <a href="#portfolio" class="btn btn-custom btn-border-w btn-small">
           Learn More &nbsp;
           <i class="fa fa-angle-right"></i>
         </a>
+         -->
       </div>
 
       <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3 services__item" data-wow-offset="300">
         <div class="services__icon">
           <i class="fa fa-barcode"></i></div>
         <h4>Branding</h4>
-        <!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum, rerum!</p> -->
+        <!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum, rerum!</p>
         <a href="#portfolio" class="btn btn-custom btn-border-w btn-small">
           Learn More &nbsp;
           <i class="fa fa-angle-right"></i>
         </a>
+         -->
       </div>
 
       <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3 services__item" data-wow-offset="300">
         <div class="services__icon">
           <i class="fa fa-line-chart"></i></div>
          <h4>SEO</h4>
-        <!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum, rerum!</p> -->
-        <a href="#" class="btn btn-custom btn-border-w btn-small">
+        <!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum, rerum!</p>
+        <a href="#portfolio" class="btn btn-custom btn-border-w btn-small">
           Learn More &nbsp;
           <i class="fa fa-angle-right"></i>
         </a>
+         -->
       </div>
 
     </div>
@@ -444,22 +448,22 @@
       </div>
 
       <div class="contact__form">
-        <form name="sentMessage" id="contactForm"  novalidate>
+        <form role="form" action="assets/contact.php" method="post">
         <!-- start row 1 -->
           <div class='row'>
             <div class="col-md-4 col-sm-4 col-xs-12">
               <div class="contact__form--group">
-                <input type="text" name="name" id="name" required data-validation-required-message="Please enter your name" class="contact__form--control" placeholder="Name">
+                <input type="text" name="name" id="name" required data-validation-required-message="Please enter your name" class="contact__form--control contact-name" placeholder="Name">
               </div>
             </div>
             <div class="col-md-4 col-sm-4 col-xs-12">
               <div class="contact__form--group">
-                <input type="email" name="email" id="email" required data-validation-required-message="Please enter your email" class="contact__form--control" placeholder="Email">
+                <input type="text" name="email" id="email" required data-validation-required-message="Please enter your email" class="contact__form--control contact-email" placeholder="Email">
               </div>
             </div>
             <div class="col-md-4 col-sm-4 col-xs-12">
               <div class="contact__form--group">
-                <input type="text" name="subject" id="subject" required="" class="contact__form--control" placeholder="Subject">
+                <input type="text" name="subject" id="subject" required="" class="contact__form--control contact-subject" placeholder="Subject">
               </div>
             </div>
           </div>
