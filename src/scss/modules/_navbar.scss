@@ -23,6 +23,10 @@
 	line-height: 30px;
 }
 
+.navbar-header {
+	max-height: 90px;
+}
+
 .navbar-default .navbar-nav > li > a:hover,
 .navbar-default .navbar-nav > li > a:focus{
 	color: $gold;
@@ -33,6 +37,8 @@
 	margin: 0 auto;
 	max-height: 90px;
 }
+
+
 
 .navbar-default .navbar-nav > .active > a,
 .navbar-default .navbar-nav > .active > a:focus,
@@ -47,9 +53,10 @@
 }
 
 span.signature {
-	@include img-replace("Untitled-4.svg", 150px, 50px, inline-block);
+	@include img-replace("signature__gold.svg", 175px, 70px, inline-block);
 	background-size: contain;
-	margin: 20px 10px;
+	margin: 10px 0;
+	margin-left: 10px;
 }
 
 
@@ -69,4 +76,10 @@ span.signature {
 		height: 3px;
 		border-radius: 0;
 	}
+}
+
+
+.navbar-collapse {
+	background: $color-primary;
+	text-align: center;
 }

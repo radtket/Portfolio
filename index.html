@@ -8,6 +8,12 @@
     <meta name="description" content="">
     <meta name="author" content="Taylor Radtke">
 
+    <!-- Favicons -->
+    <link rel="shortcut icon" href="img/favicon.png">
+    <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="img/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="img/apple-touch-icon-114x114.png">
+
     <!-- Stylesheet -->
     <link rel="stylesheet" href="css/application.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
@@ -447,41 +453,62 @@
         <h2 class="contact__headline">Contact</h2>
       </div>
 
-      <div class="contact__form">
-        <form role="form" action="assets/contact.php" method="post">
+        <form class="form contact__form" id="contact_form">
         <!-- start row 1 -->
           <div class='row'>
+
             <div class="col-md-4 col-sm-4 col-xs-12">
               <div class="contact__form--group">
-                <input type="text" name="name" id="name" required data-validation-required-message="Please enter your name" class="contact__form--control contact-name" placeholder="Name">
+                <input type="text" name="name" id="name" class="contact__form--control contact-name" placeholder="Name">
               </div>
             </div>
+
             <div class="col-md-4 col-sm-4 col-xs-12">
               <div class="contact__form--group">
-                <input type="text" name="email" id="email" required data-validation-required-message="Please enter your email" class="contact__form--control contact-email" placeholder="Email">
+                <input type="email" name="email" id="email" class="contact__form--control contact-name" placeholder="Email">
               </div>
             </div>
+
             <div class="col-md-4 col-sm-4 col-xs-12">
               <div class="contact__form--group">
-                <input type="text" name="subject" id="subject" required="" class="contact__form--control contact-subject" placeholder="Subject">
+                <input type="subject" name="subject" id="subject" class="contact__form--control contact-name" placeholder="Subject">
               </div>
             </div>
+
           </div>
         <!-- end row 1 -->
+
         <!-- start row 2 -->
           <div class='row'>
             <div class="col-xs-12">
+
               <div class="contact__form--group">
-                <textarea class="contact__form--control" rows="10" name="message" id="message" placeholder="Message"></textarea>
+                <textarea name="message" id="message" class="contact__form--control" rows="10" placeholder="Message"></textarea>
               </div><!-- /.contact__form--group -->
             </div>
+
           </div>
         <!-- end row 2 -->
-          <div id="success"> </div>
-          <button name="submit" type="submit" value="send" id="submit" class="btn btn-custom btn-border-w btn-large">
-          SEND MESSAGE</button>
-        </form>
-      </div> 
+
+
+        <div class="clearfix">
+          <div class="col-xs-6">
+            <!-- Inform Tip -->
+            <div class="form-tip pt-20">
+              <i class="fa fa-info-circle"></i> All the fields are required
+            </div>
+          </div>
+          <div class="col-xs-6">
+            <!-- Send Button -->
+            <div class="text-right pt-10">
+              <button class="btn btn-custom btn-border-w btn-larg" id="submit_btn">Send Message</button>
+            </div>
+          </div>
+        </div>
+
+        <div id="result"></div>
+
+      </form>
 
     </div>  
   </div>
@@ -497,10 +524,10 @@
       <div class="col-md-12 text-center">
 
         <a class="center-block page-scroll" href="#hero__main">
-          <i class="fa fa-angle-up fa-2x footer-icon"></i>
+          <i class="fa fa-angle-up fa-3x footer__icon"></i>
         </a>
 
-        <img class="footer__signature" src="http://s10.postimg.org/bjpldn351/golddd.png">
+        <img class="footer__signature" src="img/signature__gold.svg">
 
         <ul class="footer__list">
           <li class="footer__list--item">

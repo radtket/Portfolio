@@ -150,6 +150,47 @@ h2.heading-title{
 	border-top: 1px solid #eee;
 }
 
+
+
+
+
+
+.success{
+	border-color: #a9e2c2;
+	color: #36a367;
+}
+.info{
+	border-color: #9ecdfc;
+	color: #297ad3;
+}
+.notice{
+	border-color: #f9ce75;
+	color: #e9a00a;
+}
+.error{
+	border-color: #ffbbbb;
+	color: #e33131;
+}
+
+.form input.error{
+    border-color: #e41919;
+}
+.form div.error{
+    margin-top: 20px;
+    padding: 13px 20px;
+    text-align: center;
+    background: rgba(228,25,25, .75);
+    color: #fff;
+}
+.form div.success{
+    margin-top: 20px;
+    padding: 13px 20px;
+    text-align: center;
+    background: rgba(50,178,95, .75);
+    color: #fff;
+}
+
+
 /*=============================================
   Main Hero
 ================================================*/
@@ -538,11 +579,16 @@ h2.heading-title{
   padding-top: 30px;
 
 	i {
-	  color: $color-accent;
+	  color: $grey;
+	}
+
+	.page-scroll {
+		margin-bottom: 30px;
 	}
 
 	@include e(signature) {
 		@extend .center-block;
+		max-width: 200px;
 		padding: 10px 0;
 	}
 
@@ -569,6 +615,7 @@ h2.heading-title{
 				i {
 					position: relative;
 					z-index: 15;
+					color: $color-accent;
 				}
 
 				&:hover,

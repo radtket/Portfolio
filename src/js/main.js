@@ -60,37 +60,79 @@ $(document).ready(function() {
 
 
 
-  $('.contact__form form').submit(function(e) {
-    e.preventDefault();
-      $('.contact__form form input[type="text"], .contact__form form textarea').removeClass('input-error');
-      var postdata = $('.contact-form form').serialize();
-      $.ajax({
-          type: 'POST',
-          url: 'contact.php',
-          data: postdata,
-          dataType: 'json',
-          success: function(json) {
-              if(json.emailMessage != '') {
-                  $('.contact-form form .contact-name').addClass('input-error');
-              }
-              if(json.emailMessage != '') {
-                  $('.contact-form form .contact-email').addClass('input-error');
-              }
-              if(json.subjectMessage != '') {
-                  $('.contact-form form .contact-subject').addClass('input-error');
-              }
-              if(json.messageMessage != '') {
-                  $('.contact-form form textarea').addClass('input-error');
-              }
-              if(json.emailMessage == '' && json.subjectMessage == '' && json.messageMessage == '' && json.antispamMessage == '') {
-                  $('.contact-form form').fadeOut('fast', function() {
-                      $('.contact__form').append('<p>Thanks for contacting us! We will get back to you very soon.</p>');
-                      // reload background
-                  });
-              }
-          }
-      });
-  });
+/* ---------------------------------------------
+ Contact form
+ --------------------------------------------- */
+    $("#submit_btn").click(function(){
+        
+        //get input field values
+        var user_name = $('input[name=name]').val();
+        var user_email = $('input[name=email]').val();
+        var user_subject = $('input[name=subject]').val();
+        var user_message = $('textarea[name=message]').val();
+        
+        //simple validation at client's end
+        //we simply change border color to red if empty field using .css()
+        var proceed = true;
+        if (user_name == "") {
+            $('input[name=name]').css('border-color', '#e41919');
+            proceed = false;
+        }
+        if (user_email == "") {
+            $('input[name=email]').css('border-color', '#e41919');
+            proceed = false;
+        }
+
+        if (user_subject == "") {
+            $('input[name=subject]').css('border-color', '#e41919');
+            proceed = false;
+        }
+        
+        if (user_message == "") {
+            $('textarea[name=message]').css('border-color', '#e41919');
+            proceed = false;
+        }
+        
+        //everything looks good! proceed...
+        if (proceed) {
+            //data to be sent to server
+            post_data = {
+                'userName': user_name,
+                'userEmail': user_email,
+                'userSubject': user_subject,
+                'userMessage': user_message
+            };
+            
+            //Ajax post data to server
+            $.post('contact_me_smtp.php', post_data, function(response){
+            
+                //load json data from server and output message     
+                if (response.type == 'error') {
+                    output = '<div class="error">' + response.text + '</div>';
+                }
+                else {
+                
+                    output = '<div class="success">' + response.text + '</div>';
+                    
+                    //reset values in all input fields
+                    $('#contact__form input').val('');
+                    $('#contact_form textarea').val('');
+                }
+                
+                $("#result").hide().html(output).slideDown();
+            }, 'json');
+            
+        }
+        
+        return false;
+    });
+    
+    //reset previously set border colors and hide all message on .keyup()
+    $("#contact_form input, #contact_form textarea").keyup(function(){
+        $("#contact_form input, #contact_form textarea").css('border-color', '');
+        $("#result").slideUp();
+    });
+    
 
 
 
