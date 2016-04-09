@@ -132,7 +132,13 @@ $(document).ready(function() {
         $("#contact_form input, #contact_form textarea").css('border-color', '');
         $("#result").slideUp();
     });
-    
+
+
+    // Sticky Nav
+    $(".main-nav").sticky();
+
+
+    new WOW().init();
 
 
 

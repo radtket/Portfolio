@@ -8395,7 +8395,7 @@ a:hover {
 
 /*Global styles
 ==============================================*/
-.section-padding {
+.section-padding, .services, .legacy, .client, .review, .contact, .portfolio {
   padding: 50px 0px;
 }
 
@@ -8842,7 +8842,7 @@ h2.heading-title {
 }
 
 .footer .page-scroll {
-  margin-bottom: 30px;
+  margin-bottom: 10px;
 }
 
 .footer__signature {

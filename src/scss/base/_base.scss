@@ -296,6 +296,7 @@ h2.heading-title{
 
 .services {
   background: $black-gray;
+  @extend .section-padding;
 
 	@include e(headline) {
 		@extend %hdln-prim;
@@ -357,6 +358,7 @@ h2.heading-title{
 ================================================*/
 
 .legacy {
+	@extend .section-padding;
 	@include img-replace('legacy__bg.jpg', 100%, 100%);
 	background-attachment: fixed;
 	background-size: cover;
@@ -380,6 +382,7 @@ h2.heading-title{
 ================================================*/
 
 .client {
+	@extend .section-padding;
   position: relative;
   background: $color-secondary;
 
@@ -468,6 +471,7 @@ h2.heading-title{
 ================================================*/
 
 .review {
+	@extend .section-padding;
   background-attachment: fixed;
   background-image: url("../img/testimonial__bg.jpg");
   background-size: cover;
@@ -527,6 +531,7 @@ h2.heading-title{
 
 
 .contact {
+	@extend .section-padding;
 	background: $color-primary;
 	padding-bottom: 70px;
 
@@ -594,7 +599,7 @@ h2.heading-title{
 	}
 
 	.page-scroll {
-		margin-bottom: 30px;
+		margin-bottom: 10px;
 	}
 
 	@include e(signature) {
@@ -749,6 +754,7 @@ h2.heading-title{
 
 .portfolio {
 	background: $color-primary;
+	@extend .section-padding;
 
 	@include e(headline) {
 			@extend %hdln-prim;

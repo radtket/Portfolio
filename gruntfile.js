@@ -14,7 +14,7 @@ module.exports = function(grunt) {
             '<%= grunt.template.today("yyyy-mm-dd") %> */',
         },
         dev: {
-            src: ['src/js/vendor/jquery-1.11.2.min.js', 'src/js/vendor/jquery-migrate-1.2.1.min', 'src/js/vendor/bootstrap.js', 'src/js/vendor/jquery.easing.1.3.js', 'src/js/vendor/jquery.fullPage.js', 'src/js/vendor/jquery.slimscroll.js' ,'src/js/vendor/jquery.magnific-popup.js', 'src/js/vendor/isotope.js', 'src/scss/slick/slick.js', 'src/js/vendor/jquery.singlePageNav.js', 'src/js/vendor/jquery.sticky.js', 'src/js/plugins.js', 'src/js/main.js'],
+            src: ['src/js/vendor/jquery-1.11.2.min.js', 'src/js/vendor/jquery-migrate-1.2.1.min', 'src/js/vendor/bootstrap.js', 'src/js/vendor/jquery.easing.1.3.js', 'src/js/vendor/jquery.fullPage.js', 'src/js/vendor/wow.js', 'src/js/vendor/jquery.slimscroll.js' ,'src/js/vendor/jquery.magnific-popup.js', 'src/js/vendor/isotope.js', 'src/scss/slick/slick.js', 'src/js/vendor/jquery.singlePageNav.js', 'src/js/vendor/jquery.sticky.js', 'src/js/plugins.js', 'src/js/main.js'],
             dest: 'js/script.min.js',
         },
     },
