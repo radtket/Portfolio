@@ -1605,7 +1605,7 @@ mark,
   text-align: right;
 }
 
-.text-center, .section-heading, .hero__content, .services__item, .services__icon, .product__content, .product__button, .portfolio__nav, .portfolio__content {
+.text-center {
   text-align: center;
 }
 
@@ -8045,6 +8045,10 @@ button.close {
   width: 1px;
 }
 
+.section-heading, .hero__content, .about, .services__item, .services__icon, .product__content, .product__button, .portfolio__nav, .portfolio__content {
+  text-align: center;
+}
+
 .about__headline:after, .services__headline:after, .client__headline:after, .review:after, .review__headline:after, .contact__headline:after, .footer__list--item a:before, .footer__list--item a:hover:before, .footer__list--item a:active:before, .product__headline:after, .portfolio__headline:after, .portfolio__nav a.active:before, .portfolio__content__inner a:after, .portfolio__content__inner a:hover:before, .portfolio__content__inner a:active:before {
   display: block;
   content: '';
@@ -8055,17 +8059,6 @@ button.close {
   float: none;
   margin-left: auto;
   margin-right: auto;
-}
-
-.bnbt,
-.btn-left,
-.bbbt,
-.btn-right {
-  position: absolute;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
 }
 
 html {
@@ -8390,6 +8383,8 @@ a {
 
 a:link, a:visited {
   text-decoration: none;
+  outline: none !important;
+  color: inherit;
 }
 
 a:hover {
@@ -8538,6 +8533,7 @@ h2.heading-title {
   About styles
 ================================================*/
 .about {
+  padding-top: 50px;
   background: #FBFBFB;
   color: #101010;
 }
@@ -8651,6 +8647,14 @@ h2.heading-title {
   background: #101010;
 }
 
+.client .fp-controlArrow.fp-prev {
+  border-color: transparent #b6944c transparent transparent;
+}
+
+.client .fp-controlArrow.fp-next {
+  border-color: transparent transparent transparent #b6944c;
+}
+
 .client__headline {
   color: #FBFBFB;
 }
@@ -8664,37 +8668,38 @@ h2.heading-title {
   margin-left: -77px;
 }
 
-.bnbt,
-.btn-left,
-.bbbt,
-.btn-right {
-  border: 3px solid #313131;
-  padding: 15px;
-  width: 50px;
+.fp-controlArrow {
+  -webkit-user-select: none;
+  /* webkit (safari, chrome) browsers */
+  -moz-user-select: none;
+  /* mozilla browsers */
+  -khtml-user-select: none;
+  /* webkit (konqueror) browsers */
+  -ms-user-select: none;
+  /* IE10+ */
+  position: absolute;
+  z-index: 4;
+  top: 50%;
   cursor: pointer;
-  z-index: 1;
-  color: #b6944c;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  -webkit-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
 }
 
-.bnbt,
-.btn-left {
-  left: 0px;
-  border-left: none;
+.fp-controlArrow.fp-prev {
+  left: 15px;
+  width: 0;
+  border-width: 38.5px 34px 38.5px 0;
+  border-color: transparent #050706 transparent transparent;
 }
 
-.bbbt,
-.btn-right {
-  right: 0px;
-  border-right: none;
-}
-
-.bnbt:hover,
-.bbbt:hover,
-.btn-left:hover,
-.btn-right:hover {
-  color: #b6944c;
-  background: rgba(0, 0, 0, 0.8);
-  transition: 0.3s;
+.fp-controlArrow.fp-next {
+  right: 15px;
+  border-width: 38.5px 0 38.5px 34px;
+  border-color: transparent transparent transparent #050706;
 }
 
 .slick-dots li button:before {
@@ -8705,12 +8710,16 @@ h2.heading-title {
   left: 0;
   width: 20px;
   height: 20px;
-  content: '•';
+  content: "\f111";
+  font-family: 'FontAwesome';
   opacity: .50;
   color: #b2b3b7;
 }
 
 .slick-dots li.slick-active button:before {
+  font-size: 16px;
+  content: "\f00d";
+  font-family: 'FontAwesome';
   color: #b6944c;
 }
 
@@ -8905,6 +8914,17 @@ h2.heading-title {
 
 #hero__green {
   background: url("../img/portfolio/greenCan/greenCan__hero.jpg") #050706;
+  position: relative;
+  background-position: center 40%;
+  background-attachment: fixed;
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+}
+
+#hero__twm {
+  background: url("../img/retargeting__twm.jpg") #050706;
   position: relative;
   background-position: center 40%;
   background-attachment: fixed;
@@ -9166,6 +9186,71 @@ h2.heading-title {
   -moz-transition: all 0.3s ease-in-out 0.6s;
   -o-transition: all 0.3s ease-in-out 0.6s;
   transition: all 0.3s ease-in-out 0.6s;
+}
+
+.retargeting__ad {
+  padding-top: 15px;
+  display: block;
+  margin: 0 auto;
+  -webkit-box-shadow: 0 8px 6px -6px black;
+  -moz-box-shadow: 0 8px 6px -6px black;
+  box-shadow: 0 8px 6px -6px black;
+}
+
+.page-tree {
+  padding: 1.5625em 0;
+  background-color: #050706;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
+}
+
+.page-tree img {
+  margin: 0px;
+  font-weight: 300;
+  max-height: 49px;
+}
+
+.page-tree .breadcrumb {
+  margin-bottom: 0;
+  margin-top: 13px;
+  padding: 0px 0;
+  background: transparent;
+}
+
+.page-tree .breadcrumb li a {
+  color: #FBFBFB;
+  text-transform: uppercase;
+  font-size: 1em;
+  font-family: "Raleway", sans-serif;
+  letter-spacing: 2px;
+  font-weight: 700;
+}
+
+.page-tree .breadcrumb li a:hover {
+  color: #c8c8c8;
+}
+
+.page-tree .breadcrumb li a.active {
+  color: #b6944c;
+  font-weight: 800;
+}
+
+.page-tree .breadcrumb li a.active:hover {
+  color: #93773c;
+}
+
+.page-tree .breadcrumb li a i {
+  color: #b6944c;
+}
+
+@media (min-width: 768px) {
+  #login-btn {
+    display: block;
+  }
+  #sesion.collapse {
+    display: none !important;
+  }
 }
 
 .about__headline, .services__headline, .client__headline, .review__headline, .contact__headline, .product__headline, .portfolio__headline {
@@ -9611,6 +9696,255 @@ span.signature {
   text-align: center;
 }
 
+/*!
+ * fullPage 2.7.8
+ * https://github.com/alvarotrigo/fullPage.js
+ * MIT licensed
+ *
+ * Copyright (C) 2013 alvarotrigo.com - A project by Alvaro Trigo
+ */
+html.fp-enabled,
+.fp-enabled body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  /*Avoid flicker on slides transitions for mobile phones #336 */
+  -webkit-tap-highlight-color: transparent;
+}
+
+#superContainer {
+  height: 100%;
+  position: relative;
+  /* Touch detection for Windows 8 */
+  -ms-touch-action: none;
+  /* IE 11 on Windows Phone 8.1*/
+  touch-action: none;
+}
+
+.fp-section {
+  position: relative;
+  -webkit-box-sizing: border-box;
+  /* Safari<=5 Android<=3 */
+  -moz-box-sizing: border-box;
+  /* <=28 */
+  box-sizing: border-box;
+}
+
+.fp-slide {
+  float: left;
+}
+
+.fp-slide, .fp-slidesContainer {
+  height: 100%;
+  display: block;
+}
+
+.fp-slides {
+  z-index: 1;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  -webkit-transition: all 0.3s ease-out;
+  /* Safari<=6 Android<=4.3 */
+  transition: all 0.3s ease-out;
+}
+
+.fp-section.fp-table, .fp-slide.fp-table {
+  display: table;
+  table-layout: fixed;
+  width: 100%;
+}
+
+.fp-tableCell {
+  display: table-cell;
+  vertical-align: middle;
+  width: 100%;
+  height: 100%;
+}
+
+.fp-slidesContainer {
+  float: left;
+  position: relative;
+}
+
+.fp-controlArrow {
+  -webkit-user-select: none;
+  /* webkit (safari, chrome) browsers */
+  -moz-user-select: none;
+  /* mozilla browsers */
+  -khtml-user-select: none;
+  /* webkit (konqueror) browsers */
+  -ms-user-select: none;
+  /* IE10+ */
+  position: absolute;
+  z-index: 4;
+  top: 50%;
+  cursor: pointer;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  margin-top: -38px;
+  -webkit-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+
+.fp-controlArrow.fp-prev {
+  left: 15px;
+  width: 0;
+  border-width: 38.5px 34px 38.5px 0;
+  border-color: transparent #050706 transparent transparent;
+}
+
+.fp-controlArrow.fp-next {
+  right: 15px;
+  border-width: 38.5px 0 38.5px 34px;
+  border-color: transparent transparent transparent #050706;
+}
+
+.fp-scrollable {
+  overflow: scroll;
+}
+
+.fp-notransition {
+  -webkit-transition: none !important;
+  transition: none !important;
+}
+
+#fp-nav {
+  position: fixed;
+  z-index: 100;
+  margin-top: -32px;
+  top: 50%;
+  opacity: 1;
+  -webkit-transform: translate3d(0, 0, 0);
+}
+
+#fp-nav.right {
+  right: 17px;
+}
+
+#fp-nav.left {
+  left: 17px;
+}
+
+.fp-slidesNav {
+  position: absolute;
+  z-index: 4;
+  left: 50%;
+  opacity: 1;
+}
+
+.fp-slidesNav.bottom {
+  bottom: 17px;
+}
+
+.fp-slidesNav.top {
+  top: 17px;
+}
+
+#fp-nav ul,
+.fp-slidesNav ul {
+  margin: 0;
+  padding: 0;
+}
+
+#fp-nav ul li,
+.fp-slidesNav ul li {
+  display: block;
+  width: 14px;
+  height: 13px;
+  margin: 7px;
+  position: relative;
+}
+
+.fp-slidesNav ul li {
+  display: inline-block;
+}
+
+#fp-nav ul li a,
+.fp-slidesNav ul li a {
+  display: block;
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+#fp-nav ul li a.active span,
+.fp-slidesNav ul li a.active span,
+#fp-nav ul li:hover a.active span,
+.fp-slidesNav ul li:hover a.active span {
+  height: 12px;
+  width: 12px;
+  margin: -6px 0 0 -6px;
+  border-radius: 100%;
+}
+
+#fp-nav ul li a span,
+.fp-slidesNav ul li a span {
+  border-radius: 50%;
+  position: absolute;
+  z-index: 1;
+  height: 4px;
+  width: 4px;
+  border: 0;
+  background: #333;
+  left: 50%;
+  top: 50%;
+  margin: -2px 0 0 -2px;
+  -webkit-transition: all 0.1s ease-in-out;
+  -moz-transition: all 0.1s ease-in-out;
+  -o-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out;
+}
+
+#fp-nav ul li:hover a span,
+.fp-slidesNav ul li:hover a span {
+  width: 10px;
+  height: 10px;
+  margin: -5px 0px 0px -5px;
+}
+
+#fp-nav ul li .fp-tooltip {
+  position: absolute;
+  top: -2px;
+  color: #fff;
+  font-size: 14px;
+  font-family: arial, helvetica, sans-serif;
+  white-space: nowrap;
+  max-width: 220px;
+  overflow: hidden;
+  display: block;
+  opacity: 0;
+  width: 0;
+  cursor: pointer;
+}
+
+#fp-nav ul li:hover .fp-tooltip,
+#fp-nav.fp-show-active a.active + .fp-tooltip {
+  -webkit-transition: opacity 0.2s ease-in;
+  transition: opacity 0.2s ease-in;
+  width: auto;
+  opacity: 1;
+}
+
+#fp-nav ul li .fp-tooltip.right {
+  right: 20px;
+}
+
+#fp-nav ul li .fp-tooltip.left {
+  left: 20px;
+}
+
+.fp-auto-height.fp-section,
+.fp-auto-height .fp-slide,
+.fp-auto-height .fp-tableCell {
+  height: auto !important;
+}
+
 /* Responsive styles
 ================================================== */
 /* Large Devices, Wide Screens */
@@ -9620,6 +9954,10 @@ span.signature {
 @media (max-width: 767px) {
   .navbar-brand {
     padding-top: 4px;
+  }
+  #page-tree {
+    visibility: none;
+    display: none;
   }
 }
 
