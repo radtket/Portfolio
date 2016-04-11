@@ -423,20 +423,20 @@ color: $color-secondary;
 
 
 .fp-controlArrow {
-    -webkit-user-select: none; /* webkit (safari, chrome) browsers */
-    -moz-user-select: none; /* mozilla browsers */
     -khtml-user-select: none; /* webkit (konqueror) browsers */
-    -ms-user-select: none; /* IE10+ */
-    position: absolute;
-    z-index: 4;
-    top: 50%;
-    cursor: pointer;
-    width: 0;
-    height: 0;
-    border-style: solid;
-    -webkit-transform: translate3d(0,0,0);
+    -moz-user-select: none; /* mozilla browsers */
     -ms-transform: translate3d(0,0,0);
+    -ms-user-select: none; /* IE10+ */
+    -webkit-transform: translate3d(0,0,0);
+    -webkit-user-select: none; /* webkit (safari, chrome) browsers */
+    border-style: solid;
+    cursor: pointer;
+    height: 0;
+    position: absolute;
+    top: 50%;
     transform: translate3d(0,0,0);
+    width: 0;
+    z-index: 4;
 }
 .fp-controlArrow.fp-prev {
     left: 15px;
@@ -733,6 +733,7 @@ color: $color-secondary;
 
 		@include m(sub) {
 			@extend %hdln-sec;
+			color: $color-accent !important;
 		}
 
 		@include pseudo-el(after, 150px, 5px) {
@@ -1019,20 +1020,17 @@ color: $color-secondary;
 
 
 .page-tree {
-	padding: em(25px) 0;
 	background-color: $color-primary;
 	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
 	-webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
 	-moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
 	img {
-		margin: 0px;
+		margin: em(5px) 0px;
 		font-weight: 300;
-		max-height: 49px;
+		max-height: 80px;
 	}
 	.breadcrumb{
-		margin-bottom: 0;
-		margin-top: 13px;
-		padding: 0px 0;
+		margin-bottom: 0px;
 		background: transparent;
 		li {
 			a {
