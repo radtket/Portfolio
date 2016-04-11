@@ -66,12 +66,20 @@
 		visibility: none;
 		display: none;
 	}
+
+	.mouse-icon {
+		display: none;
+	}
+
+
 }
 
 /* Extra Small Devices, Phones */ 
 @media (max-width : 479px) {
 
-		
+	.mouse-icon {
+		display: none;
+	}
 
 }
 

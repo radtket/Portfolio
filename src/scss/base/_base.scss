@@ -265,10 +265,10 @@ h2.heading-title{
 ================================================*/
 
 .about {
-	padding-top: 50px;
-	@extend %center-align;
-  background: $white;
-  color: $color-secondary;
+padding-top: 50px;
+@extend %center-align;
+background: $white;
+color: $color-secondary;
 
   @include e(headline) {
 		@extend %hdln-prim;
@@ -408,6 +408,14 @@ h2.heading-title{
 			bottom: 0;
 			left: 50%;
 			margin-left: -77px;
+		}
+	}
+
+	@include e(slider) {
+		div {
+			&:focus {
+				outline: none;
+			}
 		}
 	}
 }
@@ -561,6 +569,7 @@ h2.heading-title{
 			font-weight: $font-weight--medium;
 			letter-spacing: 4px;
 			text-transform: uppercase;
+			transition:  all $trns-duration;
 			&:focus,
 			&:active {
 				border-color: $color-accent;
@@ -577,6 +586,7 @@ h2.heading-title{
 	textarea.contact__form--control {
 		border: 5px solid $white;
 		margin-top: 40px;
+		transition:  all $trns-duration;
 		&:focus,
 		&:active {
 			border-color: $color-accent;
@@ -626,22 +636,27 @@ h2.heading-title{
 					left: 0;
 					border: 2px solid $color-accent;
 					transform: rotate(45deg);
+					transition:  all 0.5s;
 				}
 
 				i {
 					position: relative;
 					z-index: 15;
 					color: $color-accent;
+					transition: all 0.5s;
 				}
 
 				&:hover,
 				&:active {
 					color: $color-accent;
+					i {
+						color: $color-primary;;
+					}
 					@include pseudo-el(before, 100%, 100%) {
 						top: 0;
 						left: 0;
 						transform: rotate(45deg);
-						background: $color-primary;
+						background: $color-accent;
 					}
 				}
 			}

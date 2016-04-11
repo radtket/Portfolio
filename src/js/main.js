@@ -1,4 +1,5 @@
 $(document).ready(function() {
+
  
   // Sticky Nav
   $(".main-nav").sticky();
@@ -138,7 +139,21 @@ $(document).ready(function() {
     $(".main-nav").sticky();
 
 
-    new WOW().init();
+
+    // -------------------------------------------------------------
+    // WOW JS
+    // -------------------------------------------------------------
+
+    (function () {
+
+        new WOW({
+
+            mobile:  false
+
+        }).init();
+
+    }());
+
 
 
 
