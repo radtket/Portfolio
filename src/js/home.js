@@ -117,29 +117,31 @@ function initContactForm() {
  --------------------------------------------- */
 	$("#submit_btn").click(() => {
 		// get input field values
-		const user_name = $("input[name=name]").val();
-		const user_email = $("input[name=email]").val();
-		const user_subject = $("input[name=subject]").val();
-		const user_message = $("textarea[name=message]").val();
+		const userName = $("input[name=name]").val();
+		const userEmail = $("input[name=email]").val();
+		const userSubject = $("input[name=subject]").val();
+		const userMessage = $("textarea[name=message]").val();
+		let output;
+		let postData;
 
 		// simple validation at client's end
 		// we simply change border color to red if empty field using .css()
 		let proceed = true;
-		if (user_name == "") {
+		if (userName === "") {
 			$("input[name=name]").css("border-color", "#e41919");
 			proceed = false;
 		}
-		if (user_email == "") {
+		if (userEmail === "") {
 			$("input[name=email]").css("border-color", "#e41919");
 			proceed = false;
 		}
 
-		if (user_subject == "") {
+		if (userSubject === "") {
 			$("input[name=subject]").css("border-color", "#e41919");
 			proceed = false;
 		}
 
-		if (user_message == "") {
+		if (userMessage === "") {
 			$("textarea[name=message]").css("border-color", "#e41919");
 			proceed = false;
 		}
@@ -147,20 +149,20 @@ function initContactForm() {
 		// everything looks good! proceed...
 		if (proceed) {
 			// data to be sent to server
-			post_data = {
-				userName: user_name,
-				userEmail: user_email,
-				userSubject: user_subject,
-				userMessage: user_message
+			postData = {
+				userName,
+				userEmail,
+				userSubject,
+				userMessage
 			};
 
 			// Ajax post data to server
 			$.post(
 				"contact_me_smtp.php",
-				post_data,
+				postData,
 				response => {
 					// load json data from server and output message
-					if (response.type == "error") {
+					if (response.type === "error") {
 						output = `<div class="error">${response.text}</div>`;
 					} else {
 						output = `<div class="success">${response.text}</div>`;
