@@ -1,0 +1,11 @@
+{
+  "rules": {
+    "block-no-empty": null,
+    "number-leading-zero": "never",
+    "declaration-colon-space-after": "always",
+    "selector-pseudo-element-colon-notation": "double",
+    "indentation": "tab",
+    "max_depth": "4",
+    "unit-whitelist": ["px", "vh", "deg", "em", "rem", "%", "s"]
+  }
+}

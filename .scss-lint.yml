@@ -1,0 +1,12 @@
+scss_files: 'src/scss/**/*.scss'
+
+linters:
+  BorderZero:
+    enabled: false
+
+  Indentation:
+    character: 'tab'
+    width: 1
+
+  NestingDepth:
+    max_depth: 4

@@ -1,60 +1,40 @@
 %hdln-prim {
-  font-size: 30px;
-  line-height: 2.5;
-  letter-spacing: $letter-space;
-
-  margin-top: 0;
-  position: relative;
-  text-transform: $uppercase;
-  text-align: center;
-  font-family: $font-family--primary;
-  font-weight: $font-weight--heavy;
-  // font-size: em(42px);
-  // line-height: (46px/42px);
+	font-family: $font-family--primary;
+	font-size: 30px;
+	font-weight: $font-weight--heavy;
+	letter-spacing: $letter-space;
+	line-height: 2.5;
+	margin-top: 0;
+	position: relative;
+	text-align: center;
+	text-transform: $uppercase;
 }
 
 %hdln-sec {
-  color: $grey;
-  letter-spacing: $letter-space;
-  font-weight: $font-weight--medium;
-  font-size: em(18px);
-  font-family: $font-family--secondary;
-  text-transform: $uppercase;
-  line-height: 2.5;
-  margin-bottom: 0px;
+	color: $grey;
+	font-family: $font-family--secondary;
+	font-size: em(18px);
+	font-weight: $font-weight--medium;
+	letter-spacing: $letter-space;
+	line-height: 2.5;
+	margin-bottom: 0;
+	text-transform: $uppercase;
 }
 
 
 // Buttons
-
 %btn {
-  padding: 4px 13px;
-
-  border: 2px solid transparent;
-  -webkit-border-radius: 0;
-  -moz-border-radius: 0;
-  border-radius: 0;
-  background: rgba(34, 34, 34, .9);
-
-  color: $white;
-  text-transform: $uppercase;
-  text-decoration: none;
-  letter-spacing: $letter-space;
-  font-size: 11px;
-  // font-size : em(14px);
-  font-weight: $font-weight--medium;
-
-  transition: all 0.2s cubic-bezier(0.000, 0.000, 0.580, 1.000);
-  -webkit-transition: all 0.2s cubic-bezier(0.000, 0.000, 0.580, 1.000);
-  -moz-transition: all 0.2s cubic-bezier(0.000, 0.000, 0.580, 1.000);
-  -o-transition: all 0.2s cubic-bezier(0.000, 0.000, 0.580, 1.000);
-  -ms-transition: all 0.2s cubic-bezier(0.000, 0.000, 0.580, 1.000);
-
-  box-shadow: none;
-  -webkit-box-shadow: none;
-  -moz-box-shadow: none;
-
-  box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
+	background: rgba(34, 34, 34, .9);
+	border: 2px solid transparent;
+	border-radius: 0;
+	box-shadow: none;
+	box-sizing: border-box;
+	color: $white;
+	font-size: 11px;
+	font-weight: $font-weight--medium;
+	letter-spacing: $letter-space;
+	padding: 4px 13px;
+	text-decoration: none;
+	text-transform: $uppercase;
+	transition: all 0.2s cubic-bezier(0, 0, 0.580, 1);
 }
