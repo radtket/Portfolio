@@ -8,7 +8,6 @@
 
 html {
 	-webkit-font-smoothing: antialiased;
-	height: 100%;
 	overflow-x: hidden !important;
 	position: relative;
 	text-rendering: optimizeLegibility;
@@ -110,8 +109,12 @@ a {
 /*Global styles
 ==============================================*/
 
-.section-padding {
+%section-padding {
 	padding: 50px 0;
+}
+
+.section-padding {
+	@extend %section-padding;
 }
 
 h2.heading-title {
@@ -165,7 +168,7 @@ h2.heading-title {
 
 .form div.error {
 	background: rgba(228, 25, 25, 0.75);
-	color: #ffffff;
+	color: $white;
 	margin-top: 20px;
 	padding: 13px 20px;
 	text-align: center;
@@ -173,7 +176,7 @@ h2.heading-title {
 
 .form div.success {
 	background: rgba(50, 178, 95, 0.75);
-	color: #ffffff;
+	color: $white;
 	margin-top: 20px;
 	padding: 13px 20px;
 	text-align: center;
@@ -227,7 +230,11 @@ h2.heading-title {
 	}
 
 	@include e(icon) {
-		background-image: linear-gradient(to top, rgba($color-primary, 0.83), transparent);
+		background-image: linear-gradient(
+			to top,
+			rgba($color-primary, 0.83),
+			transparent
+		);
 		bottom: 0;
 		color: $gold;
 		left: 0;
@@ -243,8 +250,10 @@ h2.heading-title {
 ================================================*/
 
 .about {
+	@extend %center-align;
 	background: $white;
 	color: $color-secondary;
+	padding-top: 50px;
 
 	@include e(headline) {
 		@extend %hdln-prim;
@@ -269,6 +278,7 @@ h2.heading-title {
 ================================================*/
 
 .services {
+	@extend %section-padding;
 	background: $black-gray;
 
 	@include e(headline) {
@@ -346,6 +356,7 @@ h2.heading-title {
 ================================================*/
 
 .client {
+	@extend %section-padding;
 	background: $color-secondary;
 	position: relative;
 
@@ -362,6 +373,16 @@ h2.heading-title {
 			bottom: 0;
 			left: 50%;
 			margin-left: -77px;
+		}
+	}
+
+	.fp-controlArrow {
+		&.fp-prev {
+			border-color: transparent $color-accent transparent transparent;
+		}
+
+		&.fp-next {
+			border-color: transparent transparent transparent $color-accent;
 		}
 	}
 }
@@ -401,7 +422,7 @@ h2.heading-title {
 }
 
 .slick-dots li button::before {
-	color: #b2b3b7;
+	color: $grey;
 	content: "•";
 	font-size: 10px;
 	height: 20px;
@@ -429,7 +450,10 @@ h2.heading-title {
 	position: relative;
 
 	@include pseudo-el(after, 100%, 100%) {
-		background: linear-gradient(rgba(182, 148, 76, 0.5), rgba($color-primary, 0.75));
+		background: linear-gradient(
+			rgba(182, 148, 76, 0.5),
+			rgba($color-primary, 0.75)
+		);
 		left: 0;
 		top: 0;
 		z-index: 0;
@@ -478,6 +502,7 @@ h2.heading-title {
 ================================================*/
 
 .contact {
+	@extend %section-padding;
 	background: $color-primary;
 	padding-bottom: 70px;
 
@@ -521,6 +546,7 @@ h2.heading-title {
 	textarea.contact__form--control {
 		border: 5px solid $white;
 		margin-top: 40px;
+		transition: all $trns-duration;
 
 		&:focus,
 		&:active {
@@ -563,11 +589,13 @@ h2.heading-title {
 					left: 0;
 					top: 0;
 					transform: rotate(45deg);
+					transition: all 0.5s;
 				}
 
 				i {
 					color: $color-accent;
 					position: relative;
+					transition: all 0.5s;
 					z-index: 15;
 				}
 
@@ -575,8 +603,12 @@ h2.heading-title {
 				&:active {
 					color: $color-accent;
 
+					i {
+						color: $color-primary;
+					}
+
 					@include pseudo-el(before, 100%, 100%) {
-						background: $color-primary;
+						background: $color-accent;
 						left: 0;
 						top: 0;
 						transform: rotate(45deg);
@@ -597,7 +629,7 @@ h2.heading-title {
 	}
 
 	.page-scroll {
-		margin-bottom: 30px;
+		margin-bottom: 10px;
 	}
 }
 
@@ -615,6 +647,14 @@ h2.heading-title {
 
 #hero__green {
 	background: url("../img/portfolio/greenCan/greenCan__hero.jpg") $color-primary;
+	background-attachment: fixed;
+	background-position: center 40%;
+	background-size: cover;
+	position: relative;
+}
+
+#hero__twm {
+	background: url("../img/portfolio/twm/retargeting__twm.jpg") $color-primary;
 	background-attachment: fixed;
 	background-position: center 40%;
 	background-size: cover;
@@ -639,6 +679,7 @@ h2.heading-title {
 
 		@include m(sub) {
 			@extend %hdln-sec;
+			color: $color-accent !important;
 		}
 
 		@include pseudo-el(after, 150px, 5px) {
@@ -671,6 +712,7 @@ h2.heading-title {
 ================================================*/
 
 .portfolio {
+	@extend %section-padding;
 	background: $color-primary;
 
 	@include e(headline) {
@@ -703,6 +745,7 @@ h2.heading-title {
 			padding: 0;
 			position: relative;
 			text-transform: $uppercase;
+			transition: all $trns-duration;
 
 			&-active {
 				@include pseudo-el(before, 100%, 2px) {
@@ -750,7 +793,7 @@ h2.heading-title {
 			}
 
 			.portfolio__content__inner {
-				>span {
+				> span {
 					opacity: 1;
 					transform: scale(1);
 				}
@@ -787,7 +830,7 @@ h2.heading-title {
 			vertical-align: middle;
 			z-index: 4;
 
-			>span {
+			> span {
 				display: inline-block;
 				opacity: 0;
 				transform: scale(0);
@@ -869,3 +912,64 @@ h2.heading-title {
 }
 
 // end .portfolio
+
+.retargeting__ad {
+	box-shadow: 0 8px 6px -6px $black;
+	display: block;
+	margin: 0 auto;
+	padding-top: 15px;
+}
+
+.page-tree {
+	background-color: $color-primary;
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
+
+	img {
+		font-weight: 300;
+		margin: em(5px) 0;
+		max-height: 80px;
+	}
+
+	.breadcrumb {
+		background: transparent;
+		margin-bottom: 0;
+
+		li {
+			a {
+				color: $white;
+				font-family: $font-family--primary;
+				font-size: em(16px);
+				font-weight: $font-weight--bold;
+				letter-spacing: $letter-space;
+				text-transform: $uppercase;
+
+				&:hover {
+					color: darken($white, 20%);
+				}
+
+				&.active {
+					color: $color-accent;
+					font-weight: 800;
+
+					&:hover {
+						color: darken($color-accent, 10%);
+					}
+				}
+
+				i {
+					color: $color-accent;
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: 768px) {
+	#login-btn {
+		display: block;
+	}
+
+	#sesion.collapse {
+		display: none !important;
+	}
+}

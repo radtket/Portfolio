@@ -4,7 +4,7 @@
 
 .btn-custom,
 a.btn-custom {
-	background: rgba($color-primary, .9);
+	background: rgba($color-primary, 0.9);
 	border: 3px solid transparent;
 	border-radius: 0;
 	color: $white;
@@ -15,14 +15,14 @@ a.btn-custom {
 	padding: 4px 13px;
 	text-decoration: none;
 	text-transform: $uppercase;
-	transition: all 0.2s cubic-bezier(0, 0, 0.580, 1);
+	transition: all 0.2s cubic-bezier(0, 0, 0.58, 1);
 
 	&:hover,
 	&:focus {
-		background: rgba($color-primary, .7);
+		background: rgba($color-primary, 0.7);
 		border-color: transparent;
 		box-shadow: none;
-		color: rgba(255, 255, 255, .85);
+		color: rgba($white, 0.85);
 		font-weight: $font-weight--medium;
 		outline: none;
 		text-decoration: none;
@@ -33,7 +33,6 @@ a.btn-custom {
 		outline: none !important;
 	}
 }
-
 
 .btn-custom.btn-small {
 	font-size: 11px;
@@ -55,8 +54,8 @@ a.btn-custom {
 }
 
 .btn-custom.btn-glass {
-	background: rgba($color-primary, .40);
-	color: rgba($white, .75);
+	background: rgba($color-primary, 0.4);
+	color: rgba($white, 0.75);
 }
 
 .btn-custom.btn-glass:hover,
@@ -105,7 +104,7 @@ a.btn-custom {
 }
 
 .btn-custom.btn-w {
-	background: rgba($white, .8);
+	background: rgba($white, 0.8);
 	color: $color-secondary;
 }
 
@@ -146,7 +145,7 @@ a.btn-custom {
 .btn-custom.btn-color:focus {
 	background: $color-accent;
 	color: $white;
-	opacity: .85;
+	opacity: 0.85;
 }
 
 .btn-custom.btn-circle {
@@ -167,7 +166,6 @@ a.btn-custom {
 	}
 }
 
-
 .btn-icon>span {
 	color: #777777;
 	font-size: 48px;
@@ -175,10 +173,10 @@ a.btn-custom {
 	left: 0;
 	line-height: 50px;
 	margin-top: -25px;
-	opacity: .2;
+	opacity: 0.2;
 	position: absolute;
 	top: 50%;
-	transition: all 0.2s cubic-bezier(0, 0, 0.580, 1);
+	transition: all 0.2s cubic-bezier(0, 0, 0.58, 1);
 	width: 100%;
 
 	&.white {
@@ -188,7 +186,6 @@ a.btn-custom {
 	&.black {
 		color: $color-primary;
 	}
-
 }
 
 .btn-icon:hover>span {

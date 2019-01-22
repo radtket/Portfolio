@@ -1,5 +1,4 @@
-import $ from "jquery";
-import "./vendor/sticky";
+import { WOW } from "wowjs";
 
 // Defining a function to set size for #hero
 function fullscreen() {
@@ -19,3 +18,10 @@ $(() => {
 $(window).resize(() => {
 	fullscreen();
 });
+
+
+(function () {
+	new WOW({
+		mobile:  false
+	}).init();
+}());

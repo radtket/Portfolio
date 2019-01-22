@@ -116,6 +116,10 @@
   width: 1px;
 }
 
+.about {
+  text-align: center;
+}
+
 .about__headline:after, .services__headline:after, .client__headline:after, .review:after, .review__headline:after, .contact__headline:after, .footer__list--item a:before, .footer__list--item a:hover:before, .footer__list--item a:active:before, .product__headline:after, .portfolio__headline:after, .portfolio__nav .portfolio__nav--item-active:before, .portfolio__content__inner a:after, .portfolio__content__inner a:hover:before, .portfolio__content__inner a:active:before {
   content: "";
   display: block;
@@ -441,7 +445,6 @@ th {
 
 html {
   -webkit-font-smoothing: antialiased;
-  height: 100%;
   overflow-x: hidden !important;
   position: relative;
   text-rendering: optimizeLegibility;
@@ -522,7 +525,7 @@ a {
   color: #fbfbfb;
   font-weight: 400;
   text-decoration: none;
-  transition: all 0.3s cubic-bezier(0, 0, 0.58, 1);
+  transition: all 0.5s cubic-bezier(0, 0, 0.58, 1);
 }
 
 a:link, a:visited {
@@ -537,7 +540,7 @@ a:hover {
 
 /*Global styles
 ==============================================*/
-.section-padding {
+.section-padding, .services, .client, .contact, .portfolio {
   padding: 50px 0;
 }
 
@@ -592,7 +595,7 @@ h2.heading-title {
 
 .form div.error {
   background: rgba(228, 25, 25, 0.75);
-  color: #ffffff;
+  color: #fbfbfb;
   margin-top: 20px;
   padding: 13px 20px;
   text-align: center;
@@ -600,7 +603,7 @@ h2.heading-title {
 
 .form div.success {
   background: rgba(50, 178, 95, 0.75);
-  color: #ffffff;
+  color: #fbfbfb;
   margin-top: 20px;
   padding: 13px 20px;
   text-align: center;
@@ -672,6 +675,7 @@ h2.heading-title {
 .about {
   background: #fbfbfb;
   color: #101010;
+  padding-top: 50px;
 }
 
 .about__headline {
@@ -720,7 +724,7 @@ h2.heading-title {
   border: 1px solid transparent;
   padding: 7.5px 0;
   text-align: center;
-  transition: all 0.3s ease;
+  transition: all 0.5s ease;
 }
 
 .services__icon {
@@ -738,7 +742,7 @@ h2.heading-title {
 .services__icon i {
   font-size: 60px;
   line-height: 140px;
-  transition: all 0.3s cubic-bezier(0, 0, 0.58, 1);
+  transition: all 0.5s cubic-bezier(0, 0, 0.58, 1);
 }
 
 .services__icon i:hover {
@@ -792,6 +796,14 @@ h2.heading-title {
   margin-left: -77px;
 }
 
+.client .fp-controlArrow.fp-prev {
+  border-color: transparent #b6944c transparent transparent;
+}
+
+.client .fp-controlArrow.fp-next {
+  border-color: transparent transparent transparent #b6944c;
+}
+
 .bnbt,
 .btn-left,
 .bbbt,
@@ -822,7 +834,7 @@ h2.heading-title {
 .btn-right:hover {
   background: rgba(5, 7, 6, 0.8);
   color: #b6944c;
-  transition: 0.3s;
+  transition: 0.5s;
 }
 
 .slick-dots li button::before {
@@ -941,6 +953,7 @@ h2.heading-title {
 .contact textarea.contact__form--control {
   border: 5px solid #fbfbfb;
   margin-top: 40px;
+  transition: all 0.5s;
 }
 
 .contact textarea.contact__form--control:focus, .contact textarea.contact__form--control:active {
@@ -987,11 +1000,13 @@ h2.heading-title {
   left: 0;
   top: 0;
   transform: rotate(45deg);
+  transition: all 0.5s;
 }
 
 .footer__list--item a i {
   color: #b6944c;
   position: relative;
+  transition: all 0.5s;
   z-index: 15;
 }
 
@@ -999,10 +1014,14 @@ h2.heading-title {
   color: #b6944c;
 }
 
+.footer__list--item a:hover i, .footer__list--item a:active i {
+  color: #050706;
+}
+
 .footer__list--item a:hover:before, .footer__list--item a:active:before {
   height: 100%;
   width: 100%;
-  background: #050706;
+  background: #b6944c;
   left: 0;
   top: 0;
   transform: rotate(45deg);
@@ -1019,7 +1038,7 @@ h2.heading-title {
 }
 
 .footer .page-scroll {
-  margin-bottom: 30px;
+  margin-bottom: 10px;
 }
 
 /*==============================================
@@ -1041,6 +1060,14 @@ h2.heading-title {
   position: relative;
 }
 
+#hero__twm {
+  background: url("../img/portfolio/twm/retargeting__twm.jpg") #050706;
+  background-attachment: fixed;
+  background-position: center 40%;
+  background-size: cover;
+  position: relative;
+}
+
 .product__content {
   font-family: "Raleway", sans-serif;
   position: absolute;
@@ -1054,6 +1081,10 @@ h2.heading-title {
 .product__headline {
   color: #fbfbfb;
   margin-bottom: 0;
+}
+
+.product__headline--sub {
+  color: #b6944c !important;
 }
 
 .product__headline:after {
@@ -1119,6 +1150,7 @@ h2.heading-title {
   padding: 0;
   position: relative;
   text-transform: uppercase;
+  transition: all 0.5s;
 }
 
 .portfolio__nav .portfolio__nav--item-active:before {
@@ -1271,6 +1303,64 @@ h2.heading-title {
   vertical-align: middle;
 }
 
+.retargeting__ad {
+  box-shadow: 0 8px 6px -6px #050706;
+  display: block;
+  margin: 0 auto;
+  padding-top: 15px;
+}
+
+.page-tree {
+  background-color: #050706;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
+}
+
+.page-tree img {
+  font-weight: 300;
+  margin: 0.3125em 0;
+  max-height: 80px;
+}
+
+.page-tree .breadcrumb {
+  background: transparent;
+  margin-bottom: 0;
+}
+
+.page-tree .breadcrumb li a {
+  color: #fbfbfb;
+  font-family: "Raleway", sans-serif;
+  font-size: 1em;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.page-tree .breadcrumb li a:hover {
+  color: #c8c8c8;
+}
+
+.page-tree .breadcrumb li a.active {
+  color: #b6944c;
+  font-weight: 800;
+}
+
+.page-tree .breadcrumb li a.active:hover {
+  color: #93773c;
+}
+
+.page-tree .breadcrumb li a i {
+  color: #b6944c;
+}
+
+@media (min-width: 768px) {
+  #login-btn {
+    display: block;
+  }
+  #sesion.collapse {
+    display: none !important;
+  }
+}
+
 .about__headline, .services__headline, .client__headline, .review__headline, .contact__headline, .product__headline, .portfolio__headline {
   font-family: "Raleway", sans-serif;
   font-size: 30px;
@@ -1415,6 +1505,60 @@ h2.heading-title {
   background-size: contain;
 }
 
+.twm {
+  background-image: url("../img/clients/client__twm.png");
+  background-repeat: no-repeat;
+  height: 150px;
+  margin: 10px 35px;
+  background-position: center;
+  background-size: contain;
+}
+
+.mouse-icon {
+  border: 2px solid #fbfbfb;
+  border-radius: 16px;
+  bottom: 40px;
+  display: block;
+  height: 50px;
+  left: 50%;
+  margin-left: -17px;
+  position: absolute;
+  width: 30px;
+  z-index: 10;
+}
+
+.mouse-icon .wheel {
+  animation-delay: 0s;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-name: drop;
+  animation-play-state: running;
+  animation-timing-function: linear;
+  background: #fbfbfb;
+  border-radius: 10px;
+  height: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  top: 4px;
+  width: 4px;
+}
+
+@keyframes drop {
+  0% {
+    opacity: 0;
+    top: 5px;
+  }
+  30% {
+    opacity: 1;
+    top: 10px;
+  }
+  100% {
+    opacity: 0;
+    top: 25px;
+  }
+}
+
 .btn-custom,
 a.btn-custom {
   background: rgba(5, 7, 6, 0.9);
@@ -1437,7 +1581,7 @@ a.btn-custom:focus {
   background: rgba(5, 7, 6, 0.7);
   border-color: transparent;
   box-shadow: none;
-  color: rgba(255, 255, 255, 0.85);
+  color: rgba(251, 251, 251, 0.85);
   font-weight: 400;
   outline: none;
   text-decoration: none;
@@ -1560,7 +1704,7 @@ a.btn-custom:active {
 .btn-custom.btn-color:focus {
   background: #b6944c;
   color: #fbfbfb;
-  opacity: .85;
+  opacity: 0.85;
 }
 
 .btn-custom.btn-circle {
@@ -1588,7 +1732,7 @@ a.btn-custom:active {
   left: 0;
   line-height: 50px;
   margin-top: -25px;
-  opacity: .2;
+  opacity: 0.2;
   position: absolute;
   top: 50%;
   transition: all 0.2s cubic-bezier(0, 0, 0.58, 1);
@@ -1693,9 +1837,53 @@ span.signature {
   text-align: center;
 }
 
+/* Responsive styles
+================================================== */
+/* Large Devices, Wide Screens */
+@media (min-width: 1200px) {
+  .breadcrumb {
+    padding: 2.0625em 0;
+    text-align: right;
+  }
+}
+
+/* Medium Devices, Desktops */
+@media (min-width: 992px) {
+  .breadcrumb {
+    padding: 2.0625em 0;
+    text-align: right;
+  }
+}
+
+/* Small Devices, Tablets */
+@media (min-width: 768px) and (max-width: 991px) {
+  .breadcrumb {
+    padding: 2.0625em 0;
+    text-align: center;
+  }
+}
+
 /* Small Devices Potrait */
 @media (max-width: 767px) {
   .navbar-brand {
     padding-top: 4px;
+  }
+  #page-tree {
+    display: none;
+    visibility: none;
+  }
+  .mouse-icon {
+    display: none;
+  }
+  .breadcrumb {
+    padding: 1.3125em 0;
+    text-align: center;
+  }
+}
+
+/* Extra Small Devices, Phones */
+@media (max-width: 479px) {
+  .mouse-icon {
+    display: none;
   }
 }

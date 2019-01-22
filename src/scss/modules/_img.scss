@@ -58,3 +58,55 @@
 .riffa {
 	@include slider-img("clients/client__riffa.png")
 }
+
+.twm {
+	@include slider-img("clients/client__twm.png")
+}
+
+.mouse-icon {
+	border: 2px solid $white;
+	border-radius: 16px;
+	bottom: 40px;
+	display: block;
+	height: 50px;
+	left: 50%;
+	margin-left: -17px;
+	position: absolute;
+	width: 30px;
+	z-index: 10;
+
+	.wheel {
+		animation-delay: 0s;
+		animation-duration: 1s;
+		animation-iteration-count: infinite;
+		animation-name: drop;
+		animation-play-state: running;
+		animation-timing-function: linear;
+		background: $white;
+		border-radius: 10px;
+		height: 10px;
+		margin-left: auto;
+		margin-right: auto;
+		position: relative;
+		top: 4px;
+		width: 4px;
+	}
+}
+
+
+@keyframes drop {
+	0% {
+		opacity: 0;
+		top: 5px;
+	}
+
+	30% {
+		opacity: 1;
+		top: 10px;
+	}
+
+	100% {
+		opacity: 0;
+		top: 25px;
+	}
+}

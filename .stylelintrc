@@ -1,11 +1,19 @@
 {
-  "rules": {
-    "block-no-empty": null,
-    "number-leading-zero": "never",
-    "declaration-colon-space-after": "always",
-    "selector-pseudo-element-colon-notation": "double",
-    "indentation": "tab",
-    "max_depth": "4",
-    "unit-whitelist": ["px", "vh", "deg", "em", "rem", "%", "s"]
-  }
+	"plugins": [
+		"stylelint-order",
+		"stylelint-scss"
+	],
+	"extends": "stylelint-config-recommended-scss",
+	"rules": {
+    "order/order": [
+      "custom-properties",
+      "declarations"
+    ],
+    "order/properties-alphabetical-order": true,
+		"selector-attribute-operator-space-after": "always",
+		"selector-attribute-operator-space-before": "always",
+		"indentation": "tab",
+		"string-quotes": "double",
+		"number-leading-zero": "never"
+	}
 }

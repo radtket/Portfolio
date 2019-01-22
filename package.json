@@ -38,8 +38,11 @@
     "gulp-sass-glob": "^1.0.9",
     "gulp-sourcemaps": "^2.6.4",
     "prettier": "^1.15.2",
-    "stylelint": "^9.2.0",
+    "stylelint": "^9.10.1",
+    "stylelint-config-recommended-scss": "^3.2.0",
     "stylelint-config-standard": "^18.2.0",
+    "stylelint-order": "^2.0.0",
+    "stylelint-scss": "^3.5.1",
     "webpack": "^4.28.4",
     "webpack-stream": "^5.2.1"
   },
@@ -49,6 +52,7 @@
     "jquery": "^3.3.1",
     "magnific-popup": "^1.1.0",
     "mixitup": "^3.3.1",
-    "slick-carousel": "^1.8.1"
+    "slick-carousel": "^1.8.1",
+    "wowjs": "^1.1.3"
   }
 }

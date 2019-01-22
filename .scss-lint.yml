@@ -1,12 +1,33 @@
-scss_files: 'src/scss/**/*.scss'
+scss_files: "src/scss/**/*.scss"
 
 linters:
-  BorderZero:
+  LeadingZero:
     enabled: false
-
-  Indentation:
-    character: 'tab'
-    width: 1
-
+  SpaceAroundOperator:
+    enabled: false
+  ElsePlacement:
+    enabled: true
+    style: new_line
+  SelectorFormat:
+    convention: hyphenated_BEM
   NestingDepth:
-    max_depth: 4
+    max_depth: 10
+  SelectorDepth:
+    max_depth: 10
+  Indentation:
+    character: tab
+    width: 1
+  QualifyingElement:
+    enabled: false
+  IdSelector:
+    enabled: false
+  ImportantRule:
+    enabled: false
+  StringQuotes:
+    style: double
+  Comment:
+    enabled: false
+  HexLength:
+    style: long
+  FinalNewline:
+    enabled: false

@@ -3,6 +3,7 @@ import "slick-carousel";
 import mixitup from "mixitup";
 import "magnific-popup";
 import "./vendor/sticky";
+import { WOW } from "wowjs";
 
 /* ---------------------------------------------
  Page Sliders
@@ -201,6 +202,9 @@ $(() => {
 	lightbox();
 	fullscreen();
 	initContactForm();
+	new WOW({
+		mobile:  false
+	}).init();
 });
 
 $(window).resize(() => {
